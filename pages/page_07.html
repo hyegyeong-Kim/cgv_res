@@ -1,0 +1,87 @@
+<div class="wrap_inner">
+    <strong class="badge">메인</strong>
+
+    <div class="device_wrap">
+        <div>
+            <p class="header"><img src="../images/screen/main_header.png"/></p>
+            <ul>
+                <li class="movie">
+                    <img src="../images/screen/01.png"/>
+                </li>
+                <li><img src="../images/screen/02.png"/></li>
+                <li><img src="../images/screen/03.png"/></li>
+                <li><img src="../images/screen/04.png"/></li>
+                <li><img src="../images/screen/05.png"/></li>
+                <li><img src="../images/screen/06.png"/></li>
+                <li><img src="../images/screen/07.png"/></li>
+                <li><img src="../images/screen/08.png"/></li>
+                <li><img src="../images/screen/09.png"/></li>
+                <li><img src="../images/screen/10.png"/></li>
+                <li><img src="../images/screen/11.png"/></li>
+                <li><img src="../images/screen/12.png"/></li>
+                <li><img src="../images/screen/13.png"/></li>
+                <li><img src="../images/screen/14.png"/></li>
+            </ul>
+        </div>
+        <p class="bottom"><img src="../images/screen/TabBar.png"/></p>
+    </div>
+    <div class="txt_wrap_s">
+        <p>영화, 액티비티 등<br/> <strong>다양한 피드 서비스</strong>를 통해<br/> <strong>CGV에 머무르며, 즐길 수 있는 이야기</strong>가<br/> 풍성해졌습니다.</p>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        var li_offset = [];
+
+        setTimeout(()=>{
+            $('.txt_wrap_s, .device_wrap').addClass('active');
+            $('.device_wrap > div ul li').each(function(index){
+                li_offset.push($(this).find('img').offset().top);
+            });
+        },500);
+
+        $('.device_wrap > div').scroll(function(){
+
+            for(i=0; i<li_offset.length; i++){
+                if(($(this).scrollTop() + ($(this).height()*0.6)) > li_offset[i]){
+                    $('.device_wrap > div ul li').removeClass('on');
+                    $('.device_wrap > div ul li').eq(i).addClass('on');
+                }
+            }
+
+            if($('.device_wrap > div ul li').eq(5).hasClass('on')){
+                $('.txt_wrap_s').removeClass('active');
+                setTimeout(function(){
+                    $('.txt_wrap_s').html(`<p><strong>개인화된 검색기능이 추가</strong>되었고<br/> <strong>새로운 서비스의 쉬운 발견</strong>이 가능합니다.</p>`).addClass('active');
+                },500);
+            }
+
+        });
+    });
+</script>
+
+<style>
+    .wrap_inner {align-items:center;}
+    .badge {position:absolute; top:0; left:0;}
+    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
+    .txt_wrap_s.active {opacity:1;}
+    .txt_wrap_s p {opacity:0; transform:scale(0.8); transition:all 0.5s 0.85s;}
+    .txt_wrap_s.active p {opacity:1; transform:scale(1);}
+
+    .device_wrap {margin-left:280px;}
+    /*.device_wrap:before,.device_wrap:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; right:34px; left:11px; display:block; transition:all 0.5s 1.5s;}
+    .device_wrap:before {height:163px; border-radius:50px 50px 0 0; top:13px;}
+    .device_wrap:after {height:84px; border-radius:0 0 50px 50px; bottom:32px;}
+    .device_wrap.active:before, .device_wrap.active:after {opacity:1; z-index:1;}*/
+
+    .device_wrap.active ul li:after {background-color:rgba(0,0,0,0.7); opacity:1; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:0;  transition:all 0.25s;}
+    .device_wrap.active ul li.on:after {opacity:0;}
+
+    .device_wrap img {width:100%;}
+
+    .device_wrap a {width:40px; height:40px; font-size:0; background-color:rgba(0,0,0,0.2); border:2px dashed #000; border-radius:50%; position:absolute; top:-10px; right:10px; opacity:0; transition:all 0.4s 1.5s;}
+    .device_wrap.active a {opacity:1;}
+
+    .device_wrap li.movie img {transition:all 0.35s;}
+</style>

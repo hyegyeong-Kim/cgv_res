@@ -1,0 +1,27 @@
+<div class="txt_wrap ac">
+    <strong>CGV의 새로운 서비스가 시작됩니다.</strong>
+    <p>UI/UX 작업을 진행하며 고민했던<br/> 새로운 서비스, 좋은 사용자경험에 대해<br/> 소개해드리겠습니다.</p>
+</div>
+
+<div class="device_wrap">
+    <div><img src="../images/img_device_01.png"/></div>
+</div>
+
+<script>
+    $(function(){
+        setTimeout(()=>{
+            $('.txt_wrap, .device_wrap').addClass('active');
+        },500);
+    });
+</script>
+
+<style>
+    .txt_wrap {opacity:0; transition:all 0.5s;}
+    .txt_wrap.active {opacity:1;}
+    .txt_wrap p {opacity:0; transform:scale(0.8); transition:all 0.5s 0.85s;}
+    .txt_wrap.active p {opacity:1; transform:scale(1);}
+    
+    .device_wrap {overflow:hidden; opacity:0; position:absolute; top:100%; left:50%; transform:translate(-50%, 0); transition:all 0.5s 1.5s;}
+    .device_wrap.active {opacity:1; transform:translate(-50%, -40%);}
+    .device_wrap img {width:100%;}
+</style>

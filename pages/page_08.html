@@ -1,0 +1,64 @@
+<div class="wrap_inner">
+    <strong class="badge">메인</strong>
+
+    <div class="device_wrap">
+        <div>
+            <p class="header"><img src="../images/movie/header.png"/></p>
+            <ul>
+                <li class="movie"><img src="../images/movie/01_title.png"/>
+                    <div><img src="../images/movie/01.png"/></div>
+                </li>
+                <li>
+                    <img src="../images/movie/02_title.png"/>
+                    <!-- swiper -->
+                    <div><img src="../images/movie/Card1.png"/></div>
+                    <!-- //swiper -->
+                    <img src="../images/movie/02_bottom.png"/>
+                </li>
+                <li><img src="../images/movie/03.png"/></li>
+                <li><img src="../images/movie/04.png"/></li>
+                <li><img src="../images/movie/05.png"/></li>
+                <li><img src="../images/movie/06.png"/></li>
+                <li><img src="../images/movie/07.png"/></li>
+                <li><img src="../images/movie/08.png"/></li>
+                <li><img src="../images/movie/09.png"/></li>
+                <li><img src="../images/movie/10_title.png"/></li>
+                <li><img src="../images/movie/10.png"/></li>
+                <li><img src="../images/movie/11.png"/></li>
+            </ul>
+        </div>
+        <p class="bottom"><img src="../images/screen/TabBar.png"/></p>
+    </div>
+    <div class="txt_wrap_s">
+        <p><strong>시네마메인</strong>으로 쉽게 진입이 가능합니다.<br/> <strong>N차 관람과 다양한 영화 추천 등</strong><br/> <strong>더욱 깊어진 개인 맞춤 영역</strong>들이 추가되었습니다.</p>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        setTimeout(()=>{
+            $('.txt_wrap_s, .device_wrap').addClass('active');
+        },500);
+    });
+</script>
+
+<style>
+    .wrap_inner {align-items:center;}
+    .badge {position:absolute; top:0; left:0;}
+    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
+    .txt_wrap_s.active {opacity:1;}
+    .txt_wrap_s p {opacity:0; transform:scale(0.8); transition:all 0.5s 0.85s;}
+    .txt_wrap_s.active p {opacity:1; transform:scale(1);}
+
+    .device_wrap {margin-left:280px;}
+
+    .device_wrap img {width:100%;}
+    .device_wrap ul li {padding:40px 15px 0;}
+    .device_wrap ul li img + div {margin-top:16px;}
+    .device_wrap ul li img + div + img {margin-top:8px;}
+
+    .device_wrap a {width:40px; height:40px; font-size:0; background-color:rgba(0,0,0,0.2); border:2px dashed #000; border-radius:50%; position:absolute; top:-10px; right:10px; opacity:0; transition:all 0.4s 1.5s;}
+    .device_wrap.active a {opacity:1;}
+
+    .device_wrap li.movie img {transition:all 0.35s;}
+</style>

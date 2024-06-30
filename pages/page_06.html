@@ -1,0 +1,76 @@
+<div class="wrap_inner">
+    <strong class="badge">메인</strong>
+
+    <div class="device_wrap">
+        <div>
+            <p class="header"><img src="../images/screen/main_header.png"/></p>
+            <ul>
+                <li class="movie">
+                    <a href="javascript:void(0);">list change</a>
+                    <img src="../images/screen/01.png"/>
+                </li>
+                <li><img src="../images/screen/02.png"/></li>
+                <li><img src="../images/screen/03.png"/></li>
+                <li><img src="../images/screen/04.png"/></li>
+                <li><img src="../images/screen/05.png"/></li>
+                <li><img src="../images/screen/06.png"/></li>
+                <li><img src="../images/screen/07.png"/></li>
+                <li><img src="../images/screen/08.png"/></li>
+                <li><img src="../images/screen/09.png"/></li>
+                <li><img src="../images/screen/10.png"/></li>
+                <li><img src="../images/screen/11.png"/></li>
+                <li><img src="../images/screen/12.png"/></li>
+                <li><img src="../images/screen/13.png"/></li>
+                <li><img src="../images/screen/14.png"/></li>
+            </ul>
+        </div>
+        <p class="bottom"><img src="../images/screen/TabBar.png"/></p>
+    </div>
+    <div class="txt_wrap_s">
+        <p><strong>사용자가 차트 뷰를 선택</strong>할 수 있습니다.<br/> <strong>포스터를 크게 볼 수 있는 리스트와</strong><br/> <strong>상세한 정보형 리스트</strong>의 두가지 타입이 있습니다.</p>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        setTimeout(()=>{
+            $('.txt_wrap_s, .device_wrap').addClass('active');
+        },500);
+
+        $('.device_wrap li a').click(function(){
+            if($(this).parent().hasClass('on')){
+                $(this).parent().removeClass('on');
+                $('.movie img').css('opacity',0);
+                setTimeout(function(){
+                    /*$('.movie') 안에 스와이퍼 destroy */
+                    $('.movie img').css('opacity',1).attr('src', '../images/screen/01.png')
+                },500);
+            } else {
+                $(this).parent().addClass('on');
+                $('.movie img').css('opacity',0);
+                setTimeout(function(){
+                    /*$('.movie') 안에 스와이퍼 호출 */
+                    /*$('.movie img').css('opacity',1).attr('src', '../images/screen/01_1.png')*/
+                },500);
+            }
+        });
+    });
+</script>
+
+<style>
+    .wrap_inner {align-items:start;}
+    .badge {position:absolute; top:0; left:0;}
+    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
+    .txt_wrap_s.active {opacity:1;}
+    .txt_wrap_s p {opacity:0; transform:scale(0.8); transition:all 0.5s 0.85s;}
+    .txt_wrap_s.active p {opacity:1; transform:scale(1);}
+
+    .device_wrap {margin-left:280px;}
+    .device_wrap > div {overflow:hidden;}
+    .device_wrap img {width:100%;}
+
+    .device_wrap a {width:40px; height:40px; font-size:0; background-color:rgba(0,0,0,0.2); border:2px dashed #000; border-radius:50%; position:absolute; top:-10px; right:10px; z-index:1; opacity:0; transition:all 0.4s 1.5s;}
+    .device_wrap.active a {opacity:1;}
+
+    .device_wrap li.movie img {transition:all 0.35s;}
+</style>

@@ -1,0 +1,39 @@
+@charset 'UTF-8';
+
+html {font-size:1em; letter-spacing:-0.025em;}
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video,button {-webkit-box-sizing:border-box;box-sizing:border-box; margin:0; padding:0; border:0; font-size:100%; vertical-align:baseline;}
+
+ul, ol {list-style:none;}
+
+em {font-style:normal;}
+
+.ac {text-align:center !important;}
+
+::-webkit-scrollbar {width: 0;}
+::-webkit-scrollbar-thumb {background: #d9d9d9; background-clip: padding-box; border: 0 solid transparent; border-radius: 8px;}
+::-webkit-scrollbar-track {background: transparent;}
+
+.wrap {height:100vh; overflow:hidden; position:relative; display:flex; align-items:center; justify-content:center;}
+
+.wrap_inner {max-height:880px; position:relative; display:flex; flex-wrap:wrap; align-items:center;}
+.wrap_inner .device_wrap + [class*="txt_wrap"] {margin-left:70px;}
+
+.btnSection {position:fixed; right:50px; bottom:50px; display:flex; align-items:center; gap:7px;}
+.btnSection button {width:76px; height:76px; font-size:0; background:url('../images/prev.png') 0 0 no-repeat; background-size:cover; border-radius:50%;}
+.btnSection button + button {transform:rotate(180deg);}
+
+.badge {margin-bottom:41px; padding:17px 26px; color:#fff; font-size:36px; font-weight:700; line-height:100%; background-color:#121212; border-radius:100px; text-align:center; display:inline-block;}
+
+[class*="txt_wrap"] > strong {font-size:43px; font-weight:700; line-height:64.5px; display:block;}
+[class*="txt_wrap"] p {color:#000; font-size:32px; line-height:48px;}
+[class*="txt_wrap"] > strong + p {margin-top:60px;}
+[class*="txt_wrap"] p strong {font-size:inherit; font-weight:700; display:inline-block;}
+.txt_wrap_s strong {font-size:32px;}
+.txt_wrap_s p {font-size:28px;}
+
+.device_wrap {width:432px; height:880px; background:url('../images/device.png') 0 0 no-repeat; background-size:contain; position:relative; overflow:hidden; flex:1;}
+.device_wrap > div {padding-bottom:100px; position:absolute; top:13px; right:34px; bottom:32px; left:11px; border-radius:50px; overflow:auto;}
+.device_wrap img {width:100%; display:block;}
+.device_wrap .header {position:sticky; top:0; z-index:1;}
+.device_wrap .bottom {position:absolute; right:34px; bottom:32px; left:11px; overflow:hidden; border-radius:0 0 50px 50px;}
+.device_wrap li {position:relative;}

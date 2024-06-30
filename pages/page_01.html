@@ -1,0 +1,22 @@
+<div>
+    <strong>
+        <span>CGV</span> On Mobile Design 시용자 리서치
+    </strong>
+    <em>2024.07</em>
+</div>
+
+<script>
+    $(function(){
+        setTimeout(()=>{
+            $('div').addClass('active');
+        },500);
+    });
+</script>
+
+<style>
+    div {text-align:center; opacity:0; transition:all 1.5s;}
+    div.active {opacity:1;}
+    strong {margin-bottom:80px; font-size:48px; font-weight:700; display:block; transition:all 0.25s;}
+    em {color:#666; font-size:16px; font-weight:300; opacity:0; display:block; transform:translateY(50px); transition:all 0.85s 1s;}
+    div.active em {opacity:1; transform:translateY(0);}
+</style>
