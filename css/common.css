@@ -19,7 +19,7 @@ em {font-style:normal;}
 .wrap_inner .device_wrap + [class*="txt_wrap"] {margin-left:70px;}
 
 .btnSection {position:fixed; right:50px; bottom:50px; display:flex; align-items:center; gap:7px;}
-.btnSection button {width:76px; height:76px; font-size:0; background:url('../images/prev.png') 0 0 no-repeat; background-size:cover; border-radius:50%;}
+.btnSection button {width:76px; height:76px; font-size:0; background:url('./images/prev.png') 0 0 no-repeat; background-size:cover; border-radius:50%;}
 .btnSection button + button {transform:rotate(180deg);}
 
 .badge {margin-bottom:41px; padding:17px 26px; color:#fff; font-size:36px; font-weight:700; line-height:100%; background-color:#121212; border-radius:100px; text-align:center; display:inline-block;}
@@ -31,7 +31,7 @@ em {font-style:normal;}
 .txt_wrap_s strong {font-size:32px;}
 .txt_wrap_s p {font-size:28px;}
 
-.device_wrap {width:432px; height:880px; background:url('../images/device.png') 0 0 no-repeat; background-size:contain; position:relative; overflow:hidden; flex:1;}
+.device_wrap {width:432px; height:880px; background:url('./images/device.png') 0 0 no-repeat; background-size:contain; position:relative; overflow:hidden; flex:1;}
 .device_wrap > div {padding-bottom:100px; position:absolute; top:13px; right:34px; bottom:32px; left:11px; border-radius:50px; overflow:auto;}
 .device_wrap img {width:100%; display:block;}
 .device_wrap .header {position:sticky; top:0; z-index:2;}
