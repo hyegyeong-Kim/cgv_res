@@ -24,12 +24,12 @@ const link = {
 		console.log('p:'+scene);
 		if(scene > 1){
 			link.ajax(scene-1);
-			location.href = '/?scene='+(Number(scene)-1);
+			location.href = '?scene='+(Number(scene)-1);
 		}
 	},
 	next:()=>{
 		link.ajax(scene+1);
-		location.href = '/?scene='+(Number(scene)+1);
+		location.href = '?scene='+(Number(scene)+1);
 	},
 	ajax:(scene)=>{
 		$.ajax({
