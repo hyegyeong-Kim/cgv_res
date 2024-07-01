@@ -43,6 +43,8 @@
     .txt_wrap_s.active {opacity:1;}
     .txt_wrap_s p {opacity:0; transform:scale(0.8); transition:all 0.5s 0.85s;}
     .txt_wrap_s.active p {opacity:1; transform:scale(1);}
+    .bottom::before {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; left:0; right:0; bottom:0; z-index:1; display:block; transition:all 0.5s 1.5s;}
+    .device_wrap.active > .bottom::before {opacity:1;}
 
     .device_wrap {margin-left:280px;}
     .device_wrap > div {overflow:hidden;}

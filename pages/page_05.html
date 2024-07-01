@@ -45,6 +45,8 @@
     .txt_wrap_s.active p {opacity:1; transform:scale(1);}
     .device_wrap {margin-left:280px;}
     .device_wrap > div {overflow:hidden;}
+    .device_wrap .header:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; bottom:0; left:0; display:block; transition:all 0.5s 1.5s;}
+    .device_wrap.active .header:after {opacity:1;}
     .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; bottom:89px; left:0; display:block; transition:all 0.5s 1.5s;}
     .device_wrap.active > div:after {opacity:1;}
     .device_wrap img {width:100%;}

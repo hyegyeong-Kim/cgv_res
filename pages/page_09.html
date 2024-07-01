@@ -3,92 +3,142 @@
 
     <div class="device_wrap">
         <div>
-            <p class="header"><img src="../images/movie/header.png"/></p>
+            <p class="header"><img src="../images/A/cinema/01.png"/></p>
             <ul>
-                <li class="movie on"><img src="../images/movie/01_title.png"/>
-                    <div><img src="../images/movie/01.png"/></div>
+                <li class="movie on">
+                    <img src="../images/A/cinema/02_title.png" alt="" style="width:123px;">
+                    <div><img src="../images/A/cinema/02.png"/></div>
+                </li>
+                <li class="main_visual" style="padding-top:14px !important;">
+                    <div class="visual swiper-container">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide"><img src="../images/A/cinema/03/03-1.png" alt=""></li>
+                            <li class="swiper-slide"><img src="../images/A/cinema/03/03-2.png" alt=""></li>
+                            <li class="swiper-slide"><img src="../images/A/cinema/03/03-3.png" alt=""></li>
+                            <li class="swiper-slide"><img src="../images/A/cinema/03/03-4.png" alt=""></li>
+                        </ul>
+                    </div>
                 </li>
                 <li>
-                    <img src="../images/movie/02_title.png"/>
+                    <img src="../images/A/cinema/04/04_title.png" alt="" style="width:88px">
                     <!-- swiper -->
-                    <div><img src="../images/movie/Card1.png"/></div>
+                    <div class="now_movie" style="padding-top:14px !important; margin-top:0 !important;">
+                        <div class="visual swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><img src="../images/A/cinema/04/04-1.png"/></li>
+                                <li class="swiper-slide"><img src="../images/A/cinema/04/04-2.png"/></li>
+                                <li class="swiper-slide"><img src="../images/A/cinema/04/04-3.png"/></li>
+                            </ul>
+                        </div>
+                    </div>
                     <!-- //swiper -->
-                    <img src="../images/movie/02_bottom.png"/>
+                    <img src="../images/A/cinema/04/04-bottom.png"/>
                 </li>
-                <li><img src="../images/movie/03.png"/></li>
-                <li><img src="../images/movie/04.png"/></li>
-                <li><img src="../images/movie/05.png"/></li>
-                <li><img src="../images/movie/06.png"/></li>
-                <li><img src="../images/movie/07.png"/></li>
-                <li><img src="../images/movie/08.png"/></li>
-                <li><img src="../images/movie/09.png"/></li>
-                <li><img src="../images/movie/10_title.png"/>
+                <li><img src="../images/A/cinema/05.png"/></li>
+                <li>
+                    <img src="../images/A/cinema/06.png" alt="">
+                </li>
+                <li><img src="../images/A/cinema/07.png" alt=""></li>
+                <li><img src="../images/A/cinema/08.png" alt=""></li>
+                <li>
+                    <img src="../images/A/cinema/09.png" alt="">
+                </li>
+                <li>
+                    <img src="../images/A/cinema/10.png" alt="">
+                </li>
+                <li><img src="../images/A/cinema/11.png"/></li>
+                <li>
+                    <img src="../images/A/cinema/12/12_title.png" alt="" style="width:182px">
                     <!-- swiper -->
-                    <div><img src="../images/movie/10.png"/></div>
+                    <div class="ott" style="padding-top:14px !important; margin-top:0 !important;">
+                        <div class="visual swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><img src="../images/A/cinema/12/12-1.png"/></li>
+                                <li class="swiper-slide"><img src="../images/A/cinema/12/12-2.png"/></li>
+                                <li class="swiper-slide"><img src="../images/A/cinema/12/12-3.png"/></li>
+                            </ul>
+                        </div>
+                    </div>
                     <!-- //swiper -->
                 </li>
-                <li><img src="../images/movie/11.png"/></li>
+                <li><img src="../images/A/cinema/13.png"/></li>
             </ul>
         </div>
-        <p class="bottom"><img src="../images/screen/TabBar.png"/></p>
+        <p class="bottom" style="z-index:2;"><img src="../images/screen/TabBar.png"/></p>
     </div>
     <div class="txt_wrap_s">
-        <p class="active">
-            <strong>N차 관람</strong>
-            나의 관람 내역에 따라 재관람 확인 및 리마인드
-        </p>
-        <p>
-            <strong>실관람객 추천</strong>
-            최근 화재가 되는 영화나 몰랐던 좋은 영화를 추천
-        </p>
-        <p>
-            <strong>OTT에서</strong>
-            상영이 끝나도 영화를 볼 수 있는 채널을 추천
-        </p>
+        <p><strong>시네마메인</strong>으로 쉽게 진입이 가능합니다.<br/> <strong>N차 관람과 다양한 영화 추천 등</strong><br/> <strong>더욱 깊어진 개인 맞춤 영역</strong>들이 추가되었습니다.</p>
     </div>
 </div>
 
 <script>
     $(function(){
-        var li_offset = [];
-
         setTimeout(()=>{
             $('.txt_wrap_s, .device_wrap').addClass('active');
-            $('.device_wrap > div ul li').each(function(index){
-                li_offset.push($(this).find('img').offset().top);
-            });
         },500);
 
-        $('.device_wrap > div').scroll(function(){
 
-            if(($(this).scrollTop() + 200) > li_offset[6] || $(this).scrollTop() == 0){
-                $('.device_wrap > div ul li').removeClass('on');
-                $('.device_wrap > div ul li').eq(0).addClass('on');
+        var option_sec01 = {
+                slidesPerView: 3.1,
+                spaceBetween: 5,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+            };
 
-                $('.txt_wrap_s p.active').removeClass('active');
+            var option_sec02 = {
+                slidesPerView: 3,
+                autoplay: {
+                    delay: 3000,
+                },
+                spaceBetween: 8,
+                loop: false,
+                keyboard: {
+                    enabled: true,
+                },
+                pagination: {
+                    el: '.sec07 .swiper-pagination',
+                    clickable: true,
+                },
+                on: {
+                    init: function () { },
+                    slideChange: function () { },
+                },
+                navigation: {
+                    nextEl: '.visual .swiper-button-next',
+                    prevEl: '.visual .swiper-button-prev',
+                },
+            };
+            var option_sec03 = {
+                slidesPerView: 1,
+                spaceBetween:5,
+                keyboard: {
+                    enabled: true,
+                },
+                navigation: {
+                    nextEl: '.visual .swiper-button-next',
+                    prevEl: '.visual .swiper-button-prev',
+                },
+            };
+            var option_sec04 = {
+                slidesPerView: 1.1,
+                spaceBetween:5,
+                keyboard: {
+                    enabled: true,
+                },
+                navigation: {
+                    nextEl: '.visual .swiper-button-next',
+                    prevEl: '.visual .swiper-button-prev',
+                },
+            };
 
-                $('.txt_wrap_s p').eq(0).addClass('active');
-            }
 
-            if(($(this).scrollTop() + 150) > li_offset[4]){
-                $('.device_wrap > div ul li').removeClass('on');
-                $('.device_wrap > div ul li').eq(5).addClass('on');
+           
+            var swiper = new Swiper('.main_visual .visual.swiper-container', option_sec01);
+            var swiper = new Swiper('.now_movie .visual.swiper-container', option_sec03);
+            var swiper = new Swiper('.ott .visual.swiper-container', option_sec04);
 
-                $('.txt_wrap_s p.active').removeClass('active');
-
-                $('.txt_wrap_s p').eq(1).addClass('active');
-            }
-
-            if(($(this).scrollTop() + 80) > li_offset[8]){
-                $('.device_wrap > div ul li').removeClass('on');
-                $('.device_wrap > div ul li').eq(9).addClass('on');
-
-                $('.txt_wrap_s p.active').removeClass('active');
-
-                $('.txt_wrap_s p').eq(2).addClass('active');
-            }
-
-        });
     });
 </script>
 
@@ -97,24 +147,23 @@
     .badge {position:absolute; top:0; left:0;}
     .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
-    .txt_wrap_s p {display:flex; flex-wrap:wrap; opacity:0; transform:scale(0.8); transition:all 0.5s 0.85s; transition-property:opacity, transform;}
+    .txt_wrap_s p {opacity:0; transform:scale(0.8); transition:all 0.5s 0.85s;}
     .txt_wrap_s.active p {opacity:1; transform:scale(1);}
 
-    .txt_wrap_s p, .txt_wrap_s p strong {margin-right:24px; font-weight:normal; flex:1;}
-    .txt_wrap_s p.active, .txt_wrap_s p.active strong {font-weight:700;}
-
     .device_wrap {margin-left:280px;}
+
+    .device_wrap img {width:100%;}
     .device_wrap ul li {padding:40px 15px 0;}
     .device_wrap ul li img + div {margin-top:16px;}
     .device_wrap ul li img + div + img {margin-top:8px;}
-
-    .device_wrap.active ul li:after {background-color:rgba(0,0,0,0.7); opacity:1; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:0;  transition:all 0.25s;}
-    .device_wrap.active ul li.on:after {opacity:0;}
-
-    .device_wrap img {width:100%;}
 
     .device_wrap a {width:40px; height:40px; font-size:0; background-color:rgba(0,0,0,0.2); border:2px dashed #000; border-radius:50%; position:absolute; top:-10px; right:10px; opacity:0; transition:all 0.4s 1.5s;}
     .device_wrap.active a {opacity:1;}
 
     .device_wrap li.movie img {transition:all 0.35s;}
+
+    .main_visual .visual .swiper-wrapper .swiper-slide {padding:0px 3px 0 !important;}
+    .now_movie .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0 !important; background:#fcfcfc; border-radius:16px; overflow: hidden;} 
+    .ott .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0px !important; background:#f4f4f4; border-radius:16px; overflow: hidden;}
+    .device_wrap > div >ul {background:linear-gradient(to top, #fcfcfc, #f4f4f4);;}
 </style>
