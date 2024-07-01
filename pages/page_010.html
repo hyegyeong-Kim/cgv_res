@@ -202,7 +202,7 @@
 
             if(($(this).scrollTop() + 200) > li_offset[4]){
                 $('.device_wrap > div > ul  >li').removeClass('on');
-                $('.show img').eq(5).addClass('on')
+                $('.show img').eq(14).addClass('on')
                 // $('.device_wrap > div > ul  >li').eq(6).addClass('on');
 
                 $('.txt_wrap_s p.active').removeClass('active');
@@ -212,9 +212,9 @@
 
             if(($(this).scrollTop() + 150) > li_offset[8]){
                 $('.device_wrap > div > ul > li').removeClass('on');
-                $('.show img').eq(6).addClass('on')
-                $('.show img').eq(7).addClass('on')
-                $('.show img').eq(8).addClass('on')
+                $('.show img').eq(19).addClass('on')
+                $('.show img').eq(20).addClass('on')
+                $('.show img').eq(21).addClass('on')
                 // $('.device_wrap > div > ul  > li').eq(10).addClass('on');
 
                 $('.txt_wrap_s p.active').removeClass('active');
@@ -231,7 +231,7 @@
     .badge {position:absolute; top:0; left:0;}
     .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
-    .txt_wrap_s p {display:flex; flex-wrap:wrap; opacity:0; transform:translateY(600px); transition:all 0.5s 0.2s; transition-property:opacity, transform;}
+    .txt_wrap_s p {display:flex; flex-wrap:wrap; opacity:0; transform:translateY(600px); transition:all 0.5s 0.5s; transition-property:opacity, transform;}
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
 
     .txt_wrap_s p, .txt_wrap_s p strong {margin-right:24px; font-weight:normal; flex:1;}
@@ -242,8 +242,8 @@
     .device_wrap ul li img + div {margin-top:16px;}
     .device_wrap ul li img + div + img {margin-top:8px;}
 
-    .device_wrap.active ul li:after {opacity:0; transition:all 3s 1.5s;}
-    .device_wrap.active ul.show li:after {background-color:rgba(0,0,0,0.7); opacity:1; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:0;}
+    .device_wrap.active ul li:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:0; transition:1s ease-out;}
+    .device_wrap.active ul.show li:after {opacity:1;}
 
     /* .device_wrap.active ul li:after {background-color:rgba(0,0,0,0.7); opacity:1; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:0; display:block
     ; transition:all 1s;}
