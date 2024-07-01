@@ -16,12 +16,32 @@
 </script>
 
 <style>
-    .txt_wrap {opacity:0; transition:all 0.5s;}
-    .txt_wrap.active {opacity:1;}
-    .txt_wrap p {opacity:0; transform:scale(0.8); transition:all 0.5s 0.85s;}
-    .txt_wrap.active p {opacity:1; transform:scale(1);}
+    .txt_wrap {position:relative; overflow:hidden;}
+    .txt_wrap.active * {
+        /* animation-name:fadeInUp;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        animation-delay: .5s; */
+    }
+    .txt_wrap strong {transform:translateY(400px); transition:all 1s 0.5s ease-out;}
+    .txt_wrap.active strong {opacity:1; transform:translateY(0px);}
+    .txt_wrap p {color:#777; font-weight:300; opacity:0; transform:translateY(400px); transition:all 0.8s 0.7s ease-out;}
+    .txt_wrap.active p {opacity:1; transform:translateY(0px);}
     
-    .device_wrap {overflow:hidden; opacity:0; position:absolute; top:100%; left:50%; transform:translate(-50%, 0); transition:all 0.5s 1.5s;}
+
+    .device_wrap {overflow:hidden; opacity:0; position:absolute; top:100%; left:50%; transform:translate(-50%, 0); transition:all 1.5s 1.5s;}
     .device_wrap.active {opacity:1; transform:translate(-50%, -40%);}
     .device_wrap img {width:100%;}
+
+
+    /* @keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    100% {
+        opacity: 1;
+        transform: none;
+    }
+    } */
 </style>

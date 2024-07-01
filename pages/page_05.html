@@ -41,13 +41,14 @@
     .badge {position:absolute; top:0; left:0;}
     .txt_wrap_s {padding-bottom:120px; opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
-    .txt_wrap_s p {opacity:0; transform:scale(0.8); transition:all 0.5s 0.85s;}
-    .txt_wrap_s.active p {opacity:1; transform:scale(1);}
+    .txt_wrap_s p {opacity:0; transform:translateY(600px); transition:all 0.8s 0.9s ease-in-out;}
+    .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
     .device_wrap {margin-left:280px;}
     .device_wrap > div {overflow:hidden;}
-    .device_wrap .header:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; bottom:0; left:0; display:block; transition:all 0.5s 1.5s;}
-    .device_wrap.active .header:after {opacity:1;}
-    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; bottom:89px; left:0; display:block; transition:all 0.5s 1.5s;}
-    .device_wrap.active > div:after {opacity:1;}
+    .device_wrap .header {z-index:1 !important;}
+    .device_wrap.active .header:after {transform:translateX(0px); opacity:1;}
+    .device_wrap .header:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.2; content:''; position:absolute; top:0; bottom:0; left:0; display:block; transform:translateX(-600px); transition:all 1.5s 0.5s ease-out;}
+    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.2; content:''; position:absolute; top:0; bottom:89px; left:0; display:block; transform:translateX(-600px); transition:all 1.5s 0.5s ease-out;}
+    .device_wrap.active > div:after {transform:translateX(0px);; opacity:1;}
     .device_wrap img {width:100%;}
 </style>

@@ -9,7 +9,7 @@
                     <a href="javascript:void(0);">list change</a>
                     <div class="change_list">
                         <img src="./images/screen/01.png"/>
-                        <!-- <div class="main_visual">
+                        <div class="main_visual">
                             <div class="visual swiper-container">
                                 <ul class="swiper-wrapper">
                                     <li class="swiper-slide"><img src="../images/A/main/List1.png" alt=""></li>
@@ -17,7 +17,7 @@
                                     <li class="swiper-slide"><img src="../images/A/main/List3.png" alt=""></li>
                                 </ul>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </li>
                 <li><img src="./images/screen/02.png"/></li>
@@ -48,6 +48,31 @@
             $('.txt_wrap_s, .device_wrap').addClass('active');
         },500);
 
+
+        $('.device_wrap li a').click(function(){
+            if($(this).parent().hasClass('on')){
+                $(this).parent().removeClass('on');
+                setTimeout(function(){
+                    $('.change_list > img').css('opacity', 0)
+                    /*$('.movie') 안에 스와이퍼 destroy */
+                },200);
+                setTimeout(function(){
+                    $('.change_list > img').attr('src', './images/screen/01.png')
+                    /*$('.movie') 안에 스와이퍼 destroy */
+                },300);
+                setTimeout(function(){
+                    $('.change_list > img').css('opacity', 1)
+                    /*$('.movie') 안에 스와이퍼 destroy */
+                },300);
+            } else {
+                $(this).parent().addClass('on');
+                setTimeout(function(){
+                    $('.change_list > img').attr('src', './images/screen/tab.png');
+                    $('.main_visual').css('opacity', 1)
+                },500)
+            }
+        });
+
         var option_sec01 = {
                 slidesPerView: 1.1,
                 spaceBetween: 5,
@@ -56,39 +81,7 @@
                     clickable: true,
                 },
             };
-            var swiper = new Swiper('.main_visual .visual.swiper-container', option_sec01);
-
-        $('.device_wrap li a').click(function(){
-            if($(this).parent().hasClass('on')){
-                $(this).parent().removeClass('on');
-                $('.movie > .change_list  > img').css('opacity',0);
-                setTimeout(function(){
-                    /*$('.movie') 안에 스와이퍼 destroy */
-                    $('.change_list').html(`
-                        <img src="./images/screen/tab.png" />
-                        <div class="main_visual">
-                            <div class="visual swiper-container">
-                                <ul class="swiper-wrapper">
-                                    <li class="swiper-slide"><img src="./images/A/main/List1.png" alt=""></li>
-                                    <li class="swiper-slide"><img src="./images/A/main/List2.png" alt=""></li>
-                                    <li class="swiper-slide"><img src="./images/A/main/List3.png" alt=""></li>
-                                </ul>
-                            </div>
-                        </div>
-                    `)
-                },200);
-            } else {
-                $(this).parent().addClass('on');
-                setTimeout(function(){
-                    $('.movie > .main_visual').css('opacity',0);
-                },500);
-                setTimeout(function(){
-                    $('.change_list').html(`
-                    <img src="./images/screen/01.png"/>
-                    `)
-                },700)
-            }
-        });
+        var swiper = new Swiper('.main_visual .visual.swiper-container', option_sec01);
     });
 </script>
 
@@ -97,18 +90,20 @@
     .badge {position:absolute; top:0; left:0;}
     .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
-    .txt_wrap_s p {opacity:0; transform:scale(0.8); transition:all 0.5s 0.85s;}
-    .txt_wrap_s.active p {opacity:1; transform:scale(1);}
+    .txt_wrap_s p {width:431px; opacity:0; transform:translateY(500px); transition:transform 0.8s 0.3s, opacity 0.5s 0.5s;}
+    .txt_wrap_s.active p {opacity:1; transform:translateY(0px);}
 
     .device_wrap {margin-left:280px;}
     .device_wrap > div {overflow:hidden;}
     .device_wrap img {width:100%;}
 
-    .device_wrap a {width:40px; height:40px; font-size:0; background-color:rgba(0,0,0,0.2); border:2px dashed #000; border-radius:50%; position:absolute; top:-10px; right:10px; z-index:3; opacity:0; transition:all 0.4s 1.5s;}
+    .device_wrap a {width:40px; height:40px; font-size:0; position:absolute; top:-10px; right:10px; z-index:3; opacity:0; transition:all 0.4s 1.5s;}
     .device_wrap.active a {opacity:3 !important;}
 
     .device_wrap li.movie img {transition:all 0.35s;}
     .device_wrap li.movie img {transition:all 0.35s;}
     .main_visual {padding:30px 15px 0; transition:all 0.35s;}
     .main_visual .visual .swiper-wrapper .swiper-slide {padding:0px 3px 0 !important;}
+    .movie .change_list > img{transition:all 0.2s;}
+    .movie.on .main_visual{transition:all 0.2s;}
 </style>
