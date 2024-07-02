@@ -1,44 +1,156 @@
-<!-- <div class="wrap_inner">
-    <strong class="badge">통합결제</strong>
+<script>
+     $(document).ready(function () {
+
+
+           
+        });
+
+</script>
+
+<style>
+    .main_visual .visual .swiper-wrapper .swiper-slide {padding:0px 3px 0 !important;}
+    .now_movie .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0 !important; background:rgba(0, 0, 0, 0.7); border-radius:16px; overflow: hidden;} 
+    .ott .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0px !important; border-radius:16px; overflow: hidden;}
+    .ott .visual .swiper-wrapper .swiper-slide::after {display:none !important;}
+    .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}
+</style>
+
+<div class="wrap_inner">
+    <strong class="badge">메인</strong>
 
     <div class="device_wrap">
         <div>
-            <p class="header"><img src="./images/C/header_01.png"/></p>
+            <p class="header"><img src="./images/A/cinema/01.png"/></p>
             <ul>
-                <li><img src="./images/C/full_img.png" alt=""></li>
+                <li class="movie">
+                    <img src="./images/A/cinema/02_title.png" alt="" style="width:123px;">
+                    <div class="show"><img class="on" src="./images/A/cinema/02.png"/></div>
+                </li>
+                <li class="main_visual" style="padding-top:14px !important;">
+                    <div class="visual swiper-container show">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide"><img class="on" src="./images/A/cinema/03/03-1.png" alt=""></li>
+                            <li class="swiper-slide"><img class="on" src="./images/A/cinema/03/03-2.png" alt=""></li>
+                            <li class="swiper-slide"><img class="on" src="./images/A/cinema/03/03-3.png" alt=""></li>
+                            <li class="swiper-slide"><img class="on" src="./images/A/cinema/03/03-4.png" alt=""></li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <img src="./images/A/cinema/04/04_title.png" alt="" style="width:88px">
+                    <!-- swiper -->
+                    <div class="now_movie" style="padding-top:14px !important; margin-top:0 !important;">
+                        <div class="visual swiper-container">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><img src="./images/A/cinema/04/04-1.png"/></li>
+                                <li class="swiper-slide"><img src="./images/A/cinema/04/04-2.png"/></li>
+                                <li class="swiper-slide"><img src="./images/A/cinema/04/04-3.png"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //swiper -->
+                    <img src="./images/A/cinema/04/04-bottom.png"/>
+                </li>
+                <li><img src="./images/A/cinema/05.png"/></li>
+                <li>
+                    <img src="./images/A/cinema/06.png" alt="">
+                </li>
+                <li><img src="./images/A/cinema/07.png" alt=""></li>
+                <li class="show"><img src="./images/A/cinema/08.png" alt=""></li>
+                <li>
+                    <img src="./images/A/cinema/09.png" alt="">
+                </li>
+                <li>
+                    <img src="./images/A/cinema/10.png" alt="">
+                </li>
+                <li><img src="./images/A/cinema/11.png"/></li>
+                <li>
+                    <img src="./images/A/cinema/12/12_title.png" alt="" style="width:182px">
+                    <!-- swiper -->
+                    <div class="ott" style="padding-top:14px !important; margin-top:0 !important;">
+                        <div class="visual swiper-container show">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><img src="./images/A/cinema/12/12-1.png"/></li>
+                                <li class="swiper-slide"><img src="./images/A/cinema/12/12-2.png"/></li>
+                                <li class="swiper-slide"><img src="./images/A/cinema/12/12-3.png"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //swiper -->
+                </li>
+                <li><img src="./images/A/cinema/13.png"/></li>
             </ul>
         </div>
-        <p class="bottom"><img src="./images/C/footer.png"/></p>
+        <p class="bottom" style="z-index:2;"><img src="./images/screen/TabBar.png"/></p>
     </div>
     <div class="txt_wrap_s">
         <p>
-            <strong>결제 완료까지</strong> 필요한 과정을<br>
-            <strong>사용자가 명확하게 구별하여 인지</strong>할 수 있도록<br>
-            <strong>카드형 UI로 섹션</strong>을 구성했습니다.
+            영화는 <strong>영화별, 극장별로 예매가능</strong>하며<br>
+            <strong>아이스콘, 특별관까지</strong> 많은 정보를<br>
+            명확하고 싶게 구성하였습니다.
         </p>
     </div>
 </div>
 
 <script>
     $(function(){
+        var li_offset = [];
+
         setTimeout(()=>{
             $('.txt_wrap_s, .device_wrap').addClass('active');
+            $('.device_wrap > div > ul > li.show').each(function(index){
+                li_offset.push($(this).find('img').offset().top);
+            });
         },500);
+
+        $('.device_wrap > div').scroll(function(){
+            for(i=0; i<li_offset.length; i++){
+                if(($(this).scrollTop() + ($(this).height()*0.9)) > li_offset[i]){
+                    $('.device_wrap.active ul').addClass('show')
+                    $('.device_wrap > div > ul  > li.show > img').removeClass('on');
+                    $('.device_wrap > div > ul  > li.show > img').eq(i).addClass('on');
+                }
+            }
+            var scrollValue = $('.device_wrap > div').scrollTop();
+            console.log(scrollValue) 
+            if(scrollValue < 400){
+                $('.device_wrap.active ul').removeClass('show')
+            }
+        });
     });
 </script>
 
 <style>
-    .wrap_inner {align-items:start;}
+    .wrap_inner {align-items:center;}
     .badge {position:absolute; top:0; left:0;}
-    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
+    .txt_wrap_s {opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
-    .txt_wrap_s p {opacity:0; transform:translateY(100px); transition: 1s 0.8s ease-out; }
+    .txt_wrap_s p {opacity:0; transform:translateY(300px); transition:all 0.5s 0.25s;}
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
-    /* .bottom::before {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; left:0; right:0; bottom:0; z-index:1; display:block; transition:all 0.5s 1.5s;}
-    .device_wrap.active > .bottom::before {opacity:1;} */
 
     .device_wrap {margin-left:280px;}
-    /* .device_wrap > div {overflow:hidden;} */
-    /* .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:155px; bottom:0; left:0; z-index:1; display:block; transition:all 0.5s 1.5s;}
-    .device_wrap.active > div:after {opacity:1;} */
-</style> -->
+    .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}
+    .device_wrap > div > ul li {padding-top:16px !important;}
+
+    /* .device_wrap:before,.device_wrap:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; right:34px; left:11px; display:block; transition:all 0.5s 1.5s;}
+    .device_wrap:before {height:163px; border-radius:50px 50px 0 0; top:13px;}
+    .device_wrap:after {height:84px; border-radius:0 0 50px 50px; bottom:32px;}
+    .device_wrap.active:before, .device_wrap.active:after {opacity:1; z-index:1;} */
+
+    /* .device_wrap > div >ul {background:linear-gradient(to top, #fcfcfc, #f4f4f4);;} */
+    ul li.show img {position:relative; z-index:1; transition:all 0.2s; opacity:0.5;}
+    ul li.show img.on {opacity:1;}
+
+    .device_wrap.active ul li:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:0; transition:all 0.5s;}
+    .device_wrap.active ul.show li:after {opacity:1;}
+    /* .device_wrap.active ul li.on:after {opacity:0;} */
+    /* .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.2; content:''; position:absolute; top:0; bottom:89px; left:0; display:block; transform:translateX(-600px); transition:all 1.5s 0.5s ease-out;}
+    .device_wrap.active > div:after {transform:translateX(0px);; opacity:1;} */
+
+    .device_wrap img {width:100%;}
+
+    /* .device_wrap a {width:40px; height:40px; font-size:0; background-color:rgba(0,0,0,0.2); border:2px dashed #000; border-radius:50%; position:absolute; top:-10px; right:10px; opacity:0; transition:all 0.4s 1.5s;}
+    .device_wrap.active a {opacity:1;} */
+
+    .device_wrap li.movie img {transition:all 0.35s;}
+</style>
