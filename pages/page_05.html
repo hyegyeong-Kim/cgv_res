@@ -37,7 +37,7 @@
 </script>
 
 <style>
-    .wrap_inner {align-items:end;}
+     .wrap_inner {align-items:end;}
     .badge {position:absolute; top:0; left:0;}
     .txt_wrap_s {padding-bottom:120px; opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
@@ -46,9 +46,9 @@
     .device_wrap {margin-left:280px;}
     .device_wrap > div {overflow:hidden;}
     .device_wrap .header {z-index:1 !important;}
-    .device_wrap.active .header:after {transform:translateY(0px); opacity:1;}
+    /* .device_wrap.active .header:after {transform:translateY(0px); opacity:1;} */
     .device_wrap .header:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.5; content:''; position:absolute; top:0; bottom:9px; left:0; z-index:1; display:block; transform:translateY(900px); transition: opacity 1.3s 1.2s ease-out, transform 0.7s 0.4s ease-out;}
-    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.5; content:''; position:absolute; top:155px; bottom:0; left:0; z-index:1; display:block; transform:translateY(900px); transition: opacity 1.3s 1.2s ease-out, transform 0.7s 0.4s ease-out;}
+    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.5; content:''; position:absolute; top:0; bottom:0; left:0; z-index:1; display:block; transform:translateY(900px); transition: opacity 1.3s 1.2s ease-out, transform 0.7s 0.4s ease-out;}
     .device_wrap.active > div:after {transform:translateY(0px);; opacity:1;}
     .device_wrap img {width:100%;}
     .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}

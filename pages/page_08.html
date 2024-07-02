@@ -20,7 +20,7 @@
                 <li  style="padding:16px 15px 0;"><img src="./images/screen/11.png"/></li>
                 <li style="padding:16px 15px 0;"><img src="./images/screen/12.png"/></li>
                 <li><img src="./images/screen/13.png"/></li>
-                <li class="show" style="padding:16px 15px 0; padding-bottom: 20px;"><img src="./images/screen/14.png"/></li>
+                <li class="show fn" style="padding:16px 15px 0; padding-bottom: 20px;"><img src="./images/screen/14.png"/></li>
             </ul>
         </div>
         <p class="bottom"><img src="./images/screen/TabBar.png"/></p>
@@ -57,12 +57,11 @@
                     $('.device_wrap > div > ul  > li.show > img').eq(i).addClass('on');
                 }
             }
-            let fn_show = $('.device_wrap > div > ul > li:last-of-type.show').offset().top
-            if(fn_show <= 786){
-                $('.device_wrap > div > ul > li:last-of-type.show > img').addClass('on');
-            }else {
-                $('.device_wrap > div > ul > li:last-of-type.show > img').removeClass('on');
-            }
+            // let fn_show = $('.fn').offset().top
+            // console.log(fn_show)
+            // if(fn_show <= 7429){
+            //     $('.show.fn_show img').addClass('on');
+            // }
 
         });
     });
