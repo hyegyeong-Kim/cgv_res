@@ -25,6 +25,31 @@
         setTimeout(()=>{
             $('.txt_wrap_s, .device_wrap').addClass('active');
         },500);
+
+
+        let preScrollTop = 0;
+
+        $('.device_wrap > div').scroll(function(){
+            var scrollValue = $('.device_wrap > div').scrollTop();
+            let nextScrollTop = scrollValue;
+
+            if(preScrollTop < nextScrollTop) {
+                $('.bottom > img ').css({
+                    top:($('.bottom img').height())
+                });
+            }
+            else { // (preScrollTop > nextScrollTop)
+                $('.bottom > img').removeAttr('style');
+                $('.float_wrap').css({
+                    top:-$('.bottom img').height() + 20
+                });
+            }
+            preScrollTop = nextScrollTop;
+        })
+
+
+
+
     });
 
 </script>
@@ -39,9 +64,11 @@
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
     /* .bottom::before {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; left:0; right:0; bottom:0; z-index:1; display:block; transition:all 0.5s 1.5s;}
     .device_wrap.active > .bottom::before {opacity:1;} */
-
+    .device_wrap > div {background-color:#f2f2f2;}
     .device_wrap {margin-left:280px;}
     .cont,.bottom {transition:1s;}
+    .bottom {width:387px; height:115px; overflow:hidden;}
+    .bottom > img {position:absolute; top:0px; left:0; right:0; bottom:0; transition:0.5s;}
 
 
 
