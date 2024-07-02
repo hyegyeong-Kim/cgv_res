@@ -40,3 +40,4 @@ em {font-style:normal;}
 .device_wrap .header {position:sticky; top:0; z-index:2;}
 .device_wrap .bottom {position:absolute; z-index:2; right:34px; bottom:32px; left:11px; overflow:hidden; border-radius:0 0 50px 50px;}
 .device_wrap li {position:relative;}
+.txt_wrap_s > p {line-height:150%;}
