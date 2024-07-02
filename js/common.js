@@ -39,7 +39,7 @@ const link = {
 				$('.wrap').html(html); //호출한 파일을 대상 요소에 html로 담음
 			}, complete: function(){
 			}, error: function(){
-				$('.wrap').append('<strong>Error!!</strong>');
+				// $('.wrap').append('<strong>Error!!</strong>');
 			}
 		});
 	}
