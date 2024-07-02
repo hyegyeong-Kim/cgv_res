@@ -1,0 +1,26 @@
+<!-- <strong class="badge">통합결제</strong>
+<div class="txt_wrap_s ac">
+    <strong>심많은 예매와 예약이 가능하도록<br>
+        자연스럽고 쉬운 플로우로 결제가 진행됩니다.</strong>
+    <p>서로 다른 항목을 한꺼번에 결제할때도<br>
+        사용자에게 혼란을 주지 않도록 심플하고 <br>
+        명확한 플로우의 UI/UX를 제공합니다.</p>
+</div>
+
+<script>
+    $(function(){
+        setTimeout(()=>{
+            $('.txt_wrap_s, .badge').addClass('active');
+        },500);
+    });
+</script>
+
+<style>
+    .wrap {flex-direction:column; overflow:hidden;}
+    .badge {font-size:36px;; margin-bottom:40px; transform:translateY(100px); opacity:0; transition: 0.5s 0.5s ease-out;}
+    .badge.active {opacity:1; transform:translateY(0);}
+    .txt_wrap_s strong {transform:translateY(200px); opacity:0; transition: 0.5s 0.7s ease-out;}
+    .txt_wrap_s.active strong {opacity:1; transform:translateY(0);}
+    .txt_wrap_s p {color:#777; font-weight:300; transform:translateY(300px); opacity:0; transition:all 0.5s 1s;}
+    .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
+</style>  -->
