@@ -1,22 +1,111 @@
-<script>
-     $(document).ready(function () {
-            // var option_visual = {
-            //     slidesPerView: 1.2,
-            //     autoplay: {
-            //         delay: 3000,
-            //     },
-            //     spaceBetween:10,
-            //     // loop:true,
-            //     keyboard: {
-            //         enabled: true,
-            //     },
-            //     navigation: {
-            //         nextEl: '.visual .swiper-button-next',
-            //         prevEl: '.visual .swiper-button-prev',
-            //     },
-            // };
-
-            var option_sec01 = {
+<div class="wrap_inner">
+    <strong class="badge">예매하기</strong>
+ 
+    <div class="device_wrap">
+        <div>
+            <p class="header">
+                <img class="scroll" src="../images/B/seat/header_02.png" alt="">
+                <img class="origin show" src="../images/B/seat/header_01.png"/>
+            </p>
+            <ul>
+                <li>
+                    <img src="../images/B/seat/01.png" alt="">
+                </li>
+                <li class="change">
+                    <img src="../images/B/seat/02.png" alt="">
+                </li>
+                <li>
+                    <!-- swiper -->
+                    <div class="main_visual" style="padding-top:14px !important; margin-top:0 !important;">
+                        <div class="visual swiper-container show">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><img src="../images/B/seat/03_1.png"/></li>
+                                <li class="swiper-slide"><img src="../images/B/seat/03_2.png"/></li>
+                                <li class="swiper-slide"><img src="../images/B/seat/03_3.png"/></li>
+                                <li class="swiper-slide"><img src="../images/B/seat/03_3.png"/></li>
+                                <li class="swiper-slide"><img src="../images/B/seat/03_3.png"/></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- //swiper -->
+                </li>
+                <li class="line">
+                     <img src="../images/B/seat/04.png" alt="">
+                     <div class="hover_el">
+                         <img src="../images/B/seat/05_1.png" alt="">
+                         <img src="../images/B/seat/05_2.png" alt="">
+                     </div>
+                </li>
+                <li class="line" style="padding-top:40px !important;">
+                    <img src="../images/B/seat/06.png" alt="">
+                    <div class="toggle" style="padding-top:24px">
+                         <img src="../images/B/seat/06_1.png" alt="">
+                         <dl>
+                             <dt>소득공제 신청</dt>
+                             <dd><img src="../images/B/seat/06_2.png" alt=""></dd>
+                         </dl>
+                    </div>
+                </li>
+                <li>
+                    <img src="../images/B/seat/08.png" alt="">
+                </li>
+            </ul>
+        </div>
+        <ul class="bottom">
+            <li class="pay_btn"><img src="../images/B/seat/footer.png"/></li>
+            <li class="modal">
+                <ol>
+                    <li><span>결제전 확인해 주세요</span></li>
+                    <li>
+                        <p><img src="../images/B/seat/modal/01_icon.png" alt=""></p>
+                        <div>
+                            <strong>본 영화는 [만12세 이상 관람]가입니다.</strong>
+                            <span>만 12세 미만 고객은 만 19세 이상 성인 보호자 동반 시 관람이<br> 가능합니다. 연령확인 불가 시 입장이 제한될 수 있습니다.</span>
+                            <span>생년월일 확인 수단 지참 : 학생증, 모바일학생증, 청소년증, 여<br>권 (사진 및 캡쳐본 불가)</span>
+                        </div>
+                    </li>
+                    <li>
+                        <p><img src="../images/B/seat/modal/02_icon.png" alt=""></p>
+                        <div>
+                            <strong>취소/환불 불가 안내</strong>
+                            <span>본 컨텐츠는 진행 당일 취소/환불/결제 수단 변경이 불가합니다.</span>
+                            <span><em>취소가능기한 : 2024.05.25 (금) 23:59 까지</em></span>
+                        </div>
+                    </li>
+                    <li>
+                        <p><img src="../images/B/seat/modal/03_icon.png" alt=""></p>
+                        <div>
+                            <strong>주차 안내</strong>
+                            <span>CGV <em>영등포 주차시스템 교체로 앱과 키오스크 주차인증이 불가</em><br>합니다. 주차인증 필요시 4층 주차인증창구 방문 부탁드립니다.</span>
+                        </div>
+                    </li>
+                    <li>    
+                        <p><img src="../images/B/seat/modal/04_icon.png" alt=""></p>
+                        <div>
+                            <strong>입장 시 유의사항</strong>
+                            <span>4DX 관 입장 시 내부에 턱이 있으니 주의하시기 바랍니다.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="../images/B/seat/modal/bottom.png" alt="">
+                    </li>
+               </ol> 
+            </li>    
+        </ul>
+    </div>
+     <div class="txt_wrap_s">
+         <p>
+            <strong>꼭 확인해야 하는 많은 안내</strong> 내용도<br>
+            <strong>한번에 쉽게 확인할 수 있도록 취합</strong>해서<br>
+            <strong>프로세스를 단축</strong>했습니다.
+         </p>
+     </div>
+ </div>
+ 
+ <script>
+     $(function(){
+         
+         var option_sec01 = {
                 slidesPerView: 3.1,
                 spaceBetween: 5,
                 pagination: {
@@ -24,207 +113,111 @@
                     clickable: true,
                 },
             };
-
-            var option_sec02 = {
-                slidesPerView: 3,
-                autoplay: {
-                    delay: 3000,
-                },
-                spaceBetween: 8,
-                loop: false,
-                keyboard: {
-                    enabled: true,
-                },
-                pagination: {
-                    el: '.sec07 .swiper-pagination',
-                    clickable: true,
-                },
-                on: {
-                    init: function () { },
-                    slideChange: function () { },
-                },
-                navigation: {
-                    nextEl: '.visual .swiper-button-next',
-                    prevEl: '.visual .swiper-button-prev',
-                },
-            };
-            var option_sec03 = {
-                slidesPerView: 1,
-                spaceBetween:5,
-                keyboard: {
-                    enabled: true,
-                },
-                navigation: {
-                    nextEl: '.visual .swiper-button-next',
-                    prevEl: '.visual .swiper-button-prev',
-                },
-            };
-            var option_sec04 = {
-                slidesPerView: 1.1,
-                spaceBetween:5,
-                keyboard: {
-                    enabled: true,
-                },
-                navigation: {
-                    nextEl: '.visual .swiper-button-next',
-                    prevEl: '.visual .swiper-button-prev',
-                },
-            };
-
-
            
-            var swiper = new Swiper('.main_visual .visual.swiper-container', option_sec01);
-            var swiper = new Swiper('.now_movie .visual.swiper-container', option_sec03);
-            var swiper = new Swiper('.ott .visual.swiper-container', option_sec04);
+         var swiper = new Swiper('.main_visual .visual.swiper-container', option_sec01);
+ 
 
-        });
-
-</script>
-
-<style>
-    .main_visual .visual .swiper-wrapper .swiper-slide {padding:0px 3px 0 !important;}
-    .now_movie .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0 !important; background:rgba(0, 0, 0, 0.7); border-radius:16px; overflow: hidden;} 
-    .ott .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0px !important; border-radius:16px; overflow: hidden;}
-    .ott .visual .swiper-wrapper .swiper-slide::after {display:none !important;}
-    .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}
-</style>
-
-<div class="wrap_inner">
-    <strong class="badge">메인</strong>
-
-    <div class="device_wrap">
-        <div>
-            <p class="header"><img src="./images/A/cinema/01.png"/></p>
-            <ul>
-                <li class="movie">
-                    <img src="./images/A/cinema/02_title.png" alt="" style="width:123px;">
-                    <div class="show"><img class="on" src="./images/A/cinema/02.png"/></div>
-                </li>
-                <li class="main_visual" style="padding-top:14px !important;">
-                    <div class="visual swiper-container show">
-                        <ul class="swiper-wrapper">
-                            <li class="swiper-slide"><img class="on" src="./images/A/cinema/03/03-1.png" alt=""></li>
-                            <li class="swiper-slide"><img class="on" src="./images/A/cinema/03/03-2.png" alt=""></li>
-                            <li class="swiper-slide"><img class="on" src="./images/A/cinema/03/03-3.png" alt=""></li>
-                            <li class="swiper-slide"><img class="on" src="./images/A/cinema/03/03-4.png" alt=""></li>
-                        </ul>
-                    </div>
-                </li>
-                <li>
-                    <img src="./images/A/cinema/04/04_title.png" alt="" style="width:88px">
-                    <!-- swiper -->
-                    <div class="now_movie" style="padding-top:14px !important; margin-top:0 !important;">
-                        <div class="visual swiper-container">
-                            <ul class="swiper-wrapper">
-                                <li class="swiper-slide"><img src="./images/A/cinema/04/04-1.png"/></li>
-                                <li class="swiper-slide"><img src="./images/A/cinema/04/04-2.png"/></li>
-                                <li class="swiper-slide"><img src="./images/A/cinema/04/04-3.png"/></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- //swiper -->
-                    <img src="./images/A/cinema/04/04-bottom.png"/>
-                </li>
-                <li><img src="./images/A/cinema/05.png"/></li>
-                <li>
-                    <img src="./images/A/cinema/06.png" alt="">
-                </li>
-                <li><img src="./images/A/cinema/07.png" alt=""></li>
-                <li class="show"><img src="./images/A/cinema/08.png" alt=""></li>
-                <li>
-                    <img src="./images/A/cinema/09.png" alt="">
-                </li>
-                <li>
-                    <img src="./images/A/cinema/10.png" alt="">
-                </li>
-                <li><img src="./images/A/cinema/11.png"/></li>
-                <li>
-                    <img src="./images/A/cinema/12/12_title.png" alt="" style="width:182px">
-                    <!-- swiper -->
-                    <div class="ott" style="padding-top:14px !important; margin-top:0 !important;">
-                        <div class="visual swiper-container show">
-                            <ul class="swiper-wrapper">
-                                <li class="swiper-slide"><img src="./images/A/cinema/12/12-1.png"/></li>
-                                <li class="swiper-slide"><img src="./images/A/cinema/12/12-2.png"/></li>
-                                <li class="swiper-slide"><img src="./images/A/cinema/12/12-3.png"/></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <!-- //swiper -->
-                </li>
-                <li><img src="./images/A/cinema/13.png"/></li>
-            </ul>
-        </div>
-        <p class="bottom" style="z-index:2;"><img src="./images/screen/TabBar.png"/></p>
-    </div>
-    <div class="txt_wrap_s">
-        <p>
-            <strong>꼭 확인해야 하는 많은 안내</strong> 내용도<br>
-            <strong>한번에 쉽게 확인할 수 있도록 취합</strong>해서<br>
-            <strong>프로세스를 단축</strong>했습니다.
-        </p>
-    </div>
-</div>
-
-<script>
-    $(function(){
-        var li_offset = [];
-
+        // setTimeout(()=>{
+        //     $('.device_wrap > div').css({"overflow":"hidden"})
+        // },1000)
         setTimeout(()=>{
-            $('.txt_wrap_s, .device_wrap').addClass('active');
-            $('.device_wrap > div > ul > li.show').each(function(index){
-                li_offset.push($(this).find('img').offset().top);
-            });
-        },500);
+             $('.txt_wrap_s, .device_wrap').addClass('active');
+         },500);
+         setTimeout(()=>{
+            $('.modal').addClass('show')
+        },600)
+        setTimeout(()=>{
+            $('.modal ol li').addClass('active')
+        },700)
+ 
+ 
+         $('.device_wrap > div').scroll(function(){
+             $('.device_wrap > div').scroll(function(){
+             var scrollValue = $('.device_wrap > div').scrollTop();
+             console.log(scrollValue) 
+                 if(scrollValue <= 100){
+                     $('.scroll').removeClass('show')
+                     $('.origin').addClass('show')
+                     $('.header').removeClass('add')
+                 }else {
+                     $('.scroll').addClass('show')
+                     $('.origin').removeClass('show')
+                     $('.header').addClass('add')
+                 }
+             });
+         });
+     });
+ </script>
+ 
+ <style>
+     .wrap_inner {align-items:center;}
+     .badge {position:absolute; top:0; left:0;}
+     .txt_wrap_s {opacity:0; transition:all 0.5s;}
+     .txt_wrap_s.active {opacity:1;}
+     .txt_wrap_s p {opacity:0; transform:translateY(300px); transition:all 0.5s 0.25s;}
+     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
+     .header {z-index:5;}
+     .device_wrap {margin-left:280px;}
+     .device_wrap img {width:100%;}
+     .device_wrap > div > ul {margin-top:-20px; padding:15px; background:#fff; border-top-right-radius:24px; border-top-left-radius:24px; position:relative; z-index:2 !important; overflow: hidden;}
+     .device_wrap > div > ul li {padding-top:16px;}
+     .device_wrap > div > ul li:nth-of-type(2) {padding-top:32px !important;}
+     .device_wrap > div > ul li:last-of-type {padding-top:0 !important;}
+     .main_visual .visual .swiper-wrapper .swiper-slide {padding:0px 3px 0 !important;}
+     .hover_el {margin-top:16px; padding:14px 20px; border:1px solid #e9e9e9; border-radius:12px; display:flex; justify-content:space-between; transition:0.2s ease-out;}
+    .hover_el img:first-of-type{width:75px;}
+    .hover_el img:last-of-type{width:38px;}
+ 
+     .toggel > img {width:340px;}
+     .scroll {position:absolute; top:-100%; left:0; right:0; transition:0.3s;}
+     .scroll.show {top:0;}
+     .origin {opacity:0; transition:0.1s;}
+     .origin.show {opacity:1;}
+     .add {z-index:5 !important;}
+     .bottom > .pay_btn {border-radius: 0 0 50px 50px; position:absolute; bottom:0; overflow:hidden;}
+     /* .line > div > dl:hover {box-shadow:0px 10px 10px 0px rgba(0, 0, 0, 0.50);} */
+     .line {margin-left: -15px; margin-right: -15px; padding-left: 15px; padding-right: 15px; padding-bottom:40px; border-bottom:12px solid #f4f4f4;}
+     .line > div > dl {margin-top:12px; padding:14px 20px; background:#f4f4f4; border:1px solid #e9e9e9; border-radius:12px; display:flex; align-items:center; justify-content:space-between; transition:0.2s ease-out;}
+     .line > div dl dt {width:340px; color:#454545; font-size:14px; font-weight:400;}
+     .line > div dl dd {width:32px}
+     .device_wrap > ul.bottom {min-height:700px;  position:absolute !important; z-index:3 !important; right:34px !important; bottom:32px !important; left:11px !important; border-radius:0 0 50px 50px !important;}
+    .modal {background:#fff; border-radius:24px 24px 50px 50px; position:absolute !important; left:0; bottom:-900px; right:0; overflow:hidden; transition:0.5s;}
+    .modal.show {bottom:0px; z-index:4;}
+    .modal::before {content:''; width:32px; height:4px; background:#d9d9d9; border-radius:2px; position:absolute; top:15px; left:50%; display:block; transform:translateX(-50%);}
+    .modal ol {padding:36px 15px 32px; border-radius:24px;}
+    
+    .modal ol li {margin-top:24px; opacity:0; transform:translateY(10px);}
+    .modal ol li:nth-of-type(1) {transition:0.7s cubic-bezier(.9,.03,.69,.22);}
+    .modal ol li:nth-of-type(2) {transition:0.7s 0.5s cubic-bezier(.9,.03,.69,.22);}
+    .modal ol li:nth-of-type(3) {transition:0.7s 0.7s cubic-bezier(.9,.03,.69,.22);}
+    .modal ol li:nth-of-type(4) {transition:0.7s 0.9s cubic-bezier(.9,.03,.69,.22);}
+    .modal ol li:nth-of-type(5) {transition:0.7s 1s cubic-bezier(.9,.03,.69,.22);}
+    .modal ol li:nth-of-type(6) {transition:0.7s 1.2s cubic-bezier(.9,.03,.69,.22);}
+    .modal ol li.active {opacity:1; transform:translateY(0px);}
 
-        $('.device_wrap > div').scroll(function(){
-            for(i=0; i<li_offset.length; i++){
-                if(($(this).scrollTop() + ($(this).height()*0.9)) > li_offset[i]){
-                    $('.device_wrap.active ul').addClass('show')
-                    $('.device_wrap > div > ul  > li.show > img').removeClass('on');
-                    $('.device_wrap > div > ul  > li.show > img').eq(i).addClass('on');
-                }
-            }
-            var scrollValue = $('.device_wrap > div').scrollTop();
-            console.log(scrollValue) 
-            if(scrollValue < 400){
-                $('.device_wrap.active ul').removeClass('show')
-            }
-        });
-    });
-</script>
+    .modal ol li span {color:#121212; font-size:18px; font-weight:700;}
+    .modal ol li:first-of-type ~ :hover{text-shadow:0px 10px 10px 0px rgba(0, 0, 0, 0.5);}
+    .modal ol li:first-of-type ~ li{display:flex;}
+    .modal ol li:first-of-type ~ li:hover {display:flex; text-shadow:0px 10px 10px 0px rgba(0, 0, 0, 0.5);}
+    .modal ol li:first-of-type ~ li > p {width:48px; height:48px; margin-right:18px;}
+    .modal ol li:first-of-type ~ li > div {width:calc(100% - 30px); display:flex; flex-direction:column;}
+    .modal ol li:first-of-type ~ li > div > strong {color:#121212; font-size:14px; font-weight:700;}
+    .modal ol li:first-of-type ~ li > div > span {margin-left:5px; margin-top:4px; color:#454545; font-size:12px; font-weight:400; line-height:16.8px; position:relative;}
+    .modal ol li:first-of-type ~ li > div > span::before {content:''; width:2px; height:2px; margin-right:5px; background:#707070;; border-radius:50%; display:inline-block; position:absolute; top:5px; left:-6px;}
+    .modal ol li:first-of-type ~ li > div > span > em {color:#E62307;}
 
-<style>
-    .wrap_inner {align-items:center;}
-    .badge {position:absolute; top:0; left:0;}
-    .txt_wrap_s {opacity:0; transition:all 0.5s;}
-    .txt_wrap_s.active {opacity:1;}
-    .txt_wrap_s p {opacity:0; transform:translateY(300px); transition:all 0.5s 0.25s;}
-    .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
+    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; bottom:0; left:0; z-index:3; display:block; transition: opacity 1s 1s cubic-bezier(.47,1.64,.41,.8), transform 0.7s 0.4s cubic-bezier(.47,1.64,.41,.8);}
+    .device_wrap.active > div:after {opacity:1;}
 
-    .device_wrap {margin-left:280px;}
-    .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}
-    .device_wrap > div > ul li {padding-top:16px !important;}
+    /* @keyframes fade_in_1 {
+    from {
+        opacity: 0;
+        transform: translateY(-10px) scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+} */
 
-    /* .device_wrap:before,.device_wrap:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; right:34px; left:11px; display:block; transition:all 0.5s 1.5s;}
-    .device_wrap:before {height:163px; border-radius:50px 50px 0 0; top:13px;}
-    .device_wrap:after {height:84px; border-radius:0 0 50px 50px; bottom:32px;}
-    .device_wrap.active:before, .device_wrap.active:after {opacity:1; z-index:1;} */
-
-    /* .device_wrap > div >ul {background:linear-gradient(to top, #fcfcfc, #f4f4f4);;} */
-    ul li.show img {position:relative; z-index:1; transition:all 0.2s; opacity:0.5;}
-    ul li.show img.on {opacity:1;}
-
-    .device_wrap.active ul li:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:0; transition:all 0.5s;}
-    .device_wrap.active ul.show li:after {opacity:1;}
-    /* .device_wrap.active ul li.on:after {opacity:0;} */
-    /* .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.2; content:''; position:absolute; top:0; bottom:89px; left:0; display:block; transform:translateX(-600px); transition:all 1.5s 0.5s ease-out;}
-    .device_wrap.active > div:after {transform:translateX(0px);; opacity:1;} */
-
-    .device_wrap img {width:100%;}
-
-    /* .device_wrap a {width:40px; height:40px; font-size:0; background-color:rgba(0,0,0,0.2); border:2px dashed #000; border-radius:50%; position:absolute; top:-10px; right:10px; opacity:0; transition:all 0.4s 1.5s;}
-    .device_wrap.active a {opacity:1;} */
-
-    .device_wrap li.movie img {transition:all 0.35s;}
-</style>
+ </style>

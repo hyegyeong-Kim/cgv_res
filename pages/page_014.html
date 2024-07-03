@@ -1,102 +1,11 @@
-<script>
-     $(document).ready(function () {
-            // var option_visual = {
-            //     slidesPerView: 1.2,
-            //     autoplay: {
-            //         delay: 3000,
-            //     },
-            //     spaceBetween:10,
-            //     // loop:true,
-            //     keyboard: {
-            //         enabled: true,
-            //     },
-            //     navigation: {
-            //         nextEl: '.visual .swiper-button-next',
-            //         prevEl: '.visual .swiper-button-prev',
-            //     },
-            // };
-
-            var option_sec01 = {
-                slidesPerView: 3.1,
-                spaceBetween: 5,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-            };
-
-            var option_sec02 = {
-                slidesPerView: 3,
-                autoplay: {
-                    delay: 3000,
-                },
-                spaceBetween: 8,
-                loop: false,
-                keyboard: {
-                    enabled: true,
-                },
-                pagination: {
-                    el: '.sec07 .swiper-pagination',
-                    clickable: true,
-                },
-                on: {
-                    init: function () { },
-                    slideChange: function () { },
-                },
-                navigation: {
-                    nextEl: '.visual .swiper-button-next',
-                    prevEl: '.visual .swiper-button-prev',
-                },
-            };
-            var option_sec03 = {
-                slidesPerView: 1,
-                spaceBetween:5,
-                keyboard: {
-                    enabled: true,
-                },
-                navigation: {
-                    nextEl: '.visual .swiper-button-next',
-                    prevEl: '.visual .swiper-button-prev',
-                },
-            };
-            var option_sec04 = {
-                slidesPerView: 1.1,
-                spaceBetween:5,
-                keyboard: {
-                    enabled: true,
-                },
-                navigation: {
-                    nextEl: '.visual .swiper-button-next',
-                    prevEl: '.visual .swiper-button-prev',
-                },
-            };
-
-
-           
-            var swiper = new Swiper('.main_visual .visual.swiper-container', option_sec01);
-            var swiper = new Swiper('.now_movie .visual.swiper-container', option_sec03);
-            var swiper = new Swiper('.ott .visual.swiper-container', option_sec04);
-
-        });
-
-</script>
-
-<style>
-    .main_visual .visual .swiper-wrapper .swiper-slide {padding:0px 3px 0 !important;}
-    .now_movie .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0 !important; background:rgba(0, 0, 0, 0.7); border-radius:16px; overflow: hidden;} 
-    .ott .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0px !important; border-radius:16px; overflow: hidden;}
-    .ott .visual .swiper-wrapper .swiper-slide::after {display:none !important;}
-    .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}
-</style>
-
 <div class="wrap_inner">
-    <strong class="badge">메인</strong>
+    <strong class="badge">예매하기</strong>
 
     <div class="device_wrap">
         <div>
             <p class="header">
-                <img src="../images/B/time/header_01.png"/>
-                <img src="../images/B/time/header_02.png" alt="">
+                <img class="scroll" src="../images/B/time/header_02.png" alt="">
+                <img class="origin show" src="../images/B/time/header_01.png"/>
             </p>
             <ul>
                 <li>
@@ -127,17 +36,14 @@
         },500);
 
         $('.device_wrap > div').scroll(function(){
-            for(i=0; i<li_offset.length; i++){
-                if(($(this).scrollTop() + ($(this).height()*0.9)) > li_offset[i]){
-                    $('.device_wrap.active ul').addClass('show')
-                    $('.device_wrap > div > ul  > li.show > img').removeClass('on');
-                    $('.device_wrap > div > ul  > li.show > img').eq(i).addClass('on');
-                }
-            }
             var scrollValue = $('.device_wrap > div').scrollTop();
             console.log(scrollValue) 
-            if(scrollValue < 400){
-                $('.device_wrap.active ul').removeClass('show')
+            if(scrollValue <= 100){
+                $('.scroll').removeClass('show')
+                $('.origin').addClass('show')
+            }else {
+                $('.scroll').addClass('show')
+                $('.origin').removeClass('show')
             }
         });
     });
@@ -161,7 +67,8 @@
     .device_wrap.active ul.show li:after {opacity:1;}
 
     .device_wrap img {width:100%;}
-
-
-    .device_wrap li.movie img {transition:all 0.35s;}
+    .scroll {position:absolute; top:-100%; left:0; right:0; transition:0.3s;}
+    .scroll.show {top:0;}
+    .origin {opacity:0; transition:0.2s;}
+    .origin.show {opacity:1;}
 </style>
