@@ -93,7 +93,7 @@
                 $(this).parent().removeClass('on');
                 setTimeout(function(){
                     $('.change_list > img').css('opacity', 0)
-                    $('.change_list > img').attr('src', './images/screen/tab_01.png')
+                    $('.change_list > img').attr('src', './images/screen/tab_02.png')
                     $('.main_visual').css({'opacity':'0',"display":'none'})
                     /*$('.movie') 안에 스와이퍼 destroy */
                 },200);
@@ -112,7 +112,7 @@
                 $(this).parent().addClass('on');
                 setTimeout(function(){
                     $('.change_list > img').css('opacity', 0)
-                    $('.change_list > img').attr('src', './images/screen/tab_02.png');
+                    $('.change_list > img').attr('src', './images/screen/tab_01.png');
                     $('.top_visual').css({'opacity':'0'})
                     $('.text_swiper').css({'opacity':'0'})
                 },200)
@@ -123,7 +123,6 @@
                     /*$('.movie') 안에 스와이퍼 destroy */
                 },350);
                 setTimeout(function(){
-                    $('.change_list > img').attr('src', './images/screen/tab_02.png');
                     $('.main_visual').css({'opacity':'1'})
                 },400)
                 setTimeout(function(){;
