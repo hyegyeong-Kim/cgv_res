@@ -234,7 +234,7 @@
     .video_2 video {width:190px; height:337px; border-radius:8px; object-fit:fill; position:absolute; bottom:154px; left:25px; z-index:3;}
     .video_3 video {width:357px; height:280px; border-radius:8px 8px 0 0; object-fit:fill; position:absolute; top:15px; left:15px; right:15px;}
 
-    @keyframes fadeIn{
+    /* @keyframes fadeIn{
             0% {
                 opacity:0;
                 transform:translateY(100px);
@@ -243,6 +243,26 @@
                 opacity:0.5;
                 transform:translateY(-30px);
             }
+            100% {
+                opacity:1;
+                transform:translateY(0px);
+            }
+        } */
+        @keyframes fadeIn{
+            0% {
+                opacity:0;
+                transform:translateY(100px);
+            }
+            50% {
+                opacity:0.5;
+                transform:translateY(-20px);
+            }
+
+            75% {
+                opacity:0.7;
+                transform:translateY(15px);
+            }
+
             100% {
                 opacity:1;
                 transform:translateY(0px);
