@@ -18,7 +18,7 @@ em {font-style:normal;}
 
 .wrap {height:100vh; overflow:hidden; position:relative; display:flex; align-items:center; justify-content:center;}
 
-.wrap_inner {max-height:880px; position:relative; display:flex; flex-wrap:wrap; align-items:center;}
+.wrap_inner {min-width:387px; max-height:880px; position:relative; display:flex; flex-wrap:nowrap; align-items:center;}
 .wrap_inner .device_wrap + [class*="txt_wrap"] {margin-left:70px;}
 
 .btnSection {position:fixed; right:240px; bottom:140px; display:flex; align-items:center; gap:7px;}
@@ -42,3 +42,5 @@ em {font-style:normal;}
 .device_wrap .bottom {position:absolute; z-index:2; right:34px; bottom:32px; left:11px; overflow:hidden; border-radius:0 0 50px 50px;}
 .device_wrap li {position:relative;}
 .txt_wrap_s > p {line-height:150%;}
+.video {position:relative; overflow:hidden;}
+.video > img {position:relative; z-index:2;}
