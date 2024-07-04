@@ -86,7 +86,6 @@
     .now_movie .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0 !important; background:rgba(0, 0, 0, 0.7); border-radius:16px; overflow: hidden;} 
     .ott .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0px !important; border-radius:16px; overflow: hidden;}
     .ott .visual .swiper-wrapper .swiper-slide::after {display:none !important;}
-    .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}
 </style>
 
 <div class="wrap_inner">
@@ -96,9 +95,18 @@
         <div>
             <p class="header"><img src="./images/A/cinema/01.png"/></p>
             <ul>
-                <li class="movie">
+                <li class="movie on">
                     <img src="./images/A/cinema/02_title.png" alt="" style="width:123px;">
-                    <div class="show"><img class="on" src="./images/A/cinema/02.png"/></div>
+                    <div class="video video_04">
+                        <div>
+                            <img class="num on" src="../images/A/cinema/02_num.png" alt="">
+                            <img class="txt on" src="../images/A/cinema/02_txt.png" alt="">
+                            <img class="icon on" src="../images/A/cinema/02_icon.png" alt="">
+                        </div>
+                        <video autoplay muted playsinline>
+                            <source src="http://h.vod.cgv.co.kr/vodCGVa/88095/88095_223800_1200_128_960_540.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </li>
                 <li class="main_visual" style="padding-top:14px !important;">
                     <div class="visual swiper-container show">
@@ -175,6 +183,9 @@
 
 <script>
     $(function(){
+        $('.video_04 > div').click(function(){
+            $('.video_04 > div').css('background-image', 'url("")');
+        })
         var li_offset = [];
 
         setTimeout(()=>{
@@ -191,7 +202,6 @@
             if(($(this).scrollTop() + 200) > li_offset[5] || $(this).scrollTop() == 0){
                 $('.device_wrap > div > ul  > li').removeClass('on');
                 $('.show img').eq(0).addClass('on')
-                $('.show img').eq(1).addClass('on')
                 console.log($('.show img'))
                 // $('.device_wrap > div > ul > li').eq(0).addClass('on');
 
@@ -202,7 +212,7 @@
 
             if(($(this).scrollTop() + 200) > li_offset[4]){
                 $('.device_wrap > div > ul  >li').removeClass('on');
-                $('.show img').eq(14).addClass('on')
+                $('.show img').eq(16).addClass('on')
                 // $('.device_wrap > div > ul  >li').eq(6).addClass('on');
 
                 $('.txt_wrap_s p.active').removeClass('active');
@@ -212,9 +222,9 @@
 
             if(($(this).scrollTop() + 150) > li_offset[8]){
                 $('.device_wrap > div > ul > li').removeClass('on');
-                $('.show img').eq(19).addClass('on')
-                $('.show img').eq(20).addClass('on')
                 $('.show img').eq(21).addClass('on')
+                $('.show img').eq(22).addClass('on')
+                $('.show img').eq(23).addClass('on')
                 // $('.device_wrap > div > ul  > li').eq(10).addClass('on');
 
                 $('.txt_wrap_s p.active').removeClass('active');
@@ -227,6 +237,7 @@
 </script>
 
 <style>
+    .device_wrap .header {z-index:3 !important;}
     .wrap_inner {align-items:center;}
     .badge {position:absolute; top:0; left:0;}
     .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
@@ -240,6 +251,7 @@
     .txt_wrap_s p span {width:523px;}
 
     .device_wrap {margin-left:280px;}
+    .device_wrap > div > ul {background: linear-gradient(rgba(255,255,255,1) 0%, rgba(243,243,243,1) 1%, rgba(244,244,244,1) 100%); overflow-x:hidden;}
     .device_wrap ul li {padding:40px 15px 0;}
     .device_wrap ul li img + div {margin-top:16px;}
     .device_wrap ul li img + div + img {margin-top:8px;}
@@ -263,4 +275,12 @@
 
     .show img {position:relative; z-index:0; transition:all 0.4s 1s; opacity:0.5;}
     img.on {z-index:1; opacity:1;}
+    .video {position:relative; border-radius:16px; overflow:hidden;}
+    .video > img {position:relative; z-index:2;}
+    .video_04 video {width:357px; height:377px; object-fit:fill; border-radius:16px; position:absolute; top:0; z-index:1;}
+    .video_04 > div {width:357px; height:377px; position:relative; z-index:2; background-image:url('../images/A/cinema/02_img.png'); background-size:100%; background-repeat:no-repeat;}
+    .video_04 > div .num, .video_04 > div .icon, .video_04 > div .txt{position:absolute; z-index:2;}
+    .video_04 > div .num {width:60px; top:20px; left:20px;}
+    .video_04 > div .icon {width:36px; right:20px; bottom:20px;}
+    .video_04 > div .txt {width:200px; bottom:20px; left:20px;}
 </style>
