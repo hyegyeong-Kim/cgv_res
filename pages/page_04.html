@@ -1,56 +1,119 @@
 <div class="wrap_inner">
+
     <strong class="badge">메인</strong>
 
+
+
     <div class="device_wrap">
+
         <div>
+
             <p class="header"><img src="./images/screen/main_header.png"/></p>
-            <ul>
+
+            <ul class="blur_wrap">
+
                 <li><img src="./images/screen/01.png"/></li>
+
                 <li><img src="./images/screen/02.png"/></li>
+
                 <li><img src="./images/screen/03.png"/></li>
+
                 <li><img src="./images/screen/04.png"/></li>
+
                 <li><img src="./images/screen/05.png"/></li>
+
                 <li><img src="./images/screen/06.png"/></li>
+
                 <li><img src="./images/screen/07.png"/></li>
+
                 <li><img src="./images/screen/08.png"/></li>
+
                 <li><img src="./images/screen/09.png"/></li>
+
                 <li><img src="./images/screen/10.png"/></li>
+
                 <li><img src="./images/screen/11.png"/></li>
+
                 <li><img src="./images/screen/12.png"/></li>
+
                 <li><img src="./images/screen/13.png"/></li>
+
                 <li><img src="./images/screen/14.png"/></li>
+
             </ul>
+
             <p class="bottom"><img src="./images/screen/TabBar.png"/></p>
+
         </div>
+
     </div>
+
     <div class="txt_wrap_s">
+
         <p>
+
             <strong>CGV의 주요 서비스를 탭으로 구성하여</strong>
+
             <p style="color:#777">각 서비스로의 진입이 쉬워집니다.</p>
+
         </p>
+
     </div>
+
 </div>
 
+
+
 <script>
+
     $(function(){
+
         setTimeout(()=>{
+
             $('.txt_wrap_s, .device_wrap').addClass('active');
+
         },100);
+
     });
+
 </script>
 
+
+
 <style>
+
     .wrap_inner {align-items:start;}
+
     .badge {position:absolute; top:0; left:0;}
+
     .txt_wrap_s {padding-top:120px; opacity:0; transition: 1s 0.8s ease-out;}
+
     .txt_wrap_s.active {opacity:1;}
+
     .txt_wrap_s p {opacity:0; transform:translateY(100px); transition: 1s 0.8s ease-out; line-height:150%; }
+
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
 
+
+
     .device_wrap .bottom {z-index:0; bottom:1px; left:0; right:0;}
+
     .device_wrap {margin-left:280px;}
+
     .device_wrap > div {overflow:hidden; ;}
-    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.5; content:''; position:absolute; top:155px; bottom:0; left:0; z-index:1; display:block; transform:translateY(900px); transition: opacity 1.3s 1.2s cubic-bezier(.17,.84,.44,1), transform 1s 0.5s cubic-bezier(.47,1.64,.41,.8);}
+
+    /* .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.5; content:''; position:absolute; top:155px; bottom:0; left:0; z-index:1; display:block; transform:translateY(900px); transition: opacity 1.3s 1.2s cubic-bezier(.17,.84,.44,1), transform 1s 0.5s cubic-bezier(.47,1.64,.41,.8);} */
+
+    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:155px; bottom:0; left:0; z-index:1; display:block; transform:translateY(900px); transition: opacity 1.5s 0.5s;}
+
     .device_wrap.active > div:after {transform:translateY(0); opacity:1;}
+
     .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}
+
+
+
+    .blur_wrap {opacity:1; filter:blur(0); transition:all 1.5s 0.5s;}
+
+    .device_wrap.active .blur_wrap {opacity:0.5; filter:blur(4px);}
+
 </style>
