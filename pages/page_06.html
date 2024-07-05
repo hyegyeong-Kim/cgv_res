@@ -17,10 +17,10 @@
                         <div class="top_visual" >
                             <div class="visual swiper-container">
                                 <ul class="swiper-wrapper">
-                                    <li class="swiper-slide"><img src="./images/A/main/1.png" /></li>
-                                    <li class="swiper-slide"><img src="./images/A/main/2.png" /></li>
-                                    <li class="swiper-slide"><img src="./images/A/main/3.png" /></li>
-                                    <li class="swiper-slide"><img src="./images/A/main/4.png" /></li>
+                                    <li class="swiper-slide"><img src="./images/A/main/01.png" /></li>
+                                    <li class="swiper-slide"><img src="./images/A/main/02.png" /></li>
+                                    <li class="swiper-slide"><img src="./images/A/main/03.png" /></li>
+                                    <li class="swiper-slide"><img src="./images/A/main/04.png" /></li>
                                 </ul>
                             </div>
                         </div>
@@ -134,14 +134,13 @@
         var option_sec01 = {
                 slidesPerView: 1.1,
                 spaceBetween: 5,
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
+                autoplay: {
+                    delay: 2000,
                 },
             };
 
             var option_sec02 = {
-                spaceBetween: 10,
+                spaceBetween: 30,
                 slidesPerView: 3,
                 centeredSlides: true,
                 roundLengths: true,
@@ -149,7 +148,7 @@
                     delay: 2000,
                 },
                 loop: true,
-                loopAdditionalSlides: 30,
+                loopAdditionalSlides: 10,
                 pagination: {
                     el: '.sec07 .swiper-pagination',
                     clickable: true,
@@ -219,9 +218,11 @@
     .movie.on .text_swiper {transition:all 0.5s;}
     .movie .text_swiper {transition:all 0.5s;}
     .top_visual > .swiper-container {margin-left: -120px; margin-right: -120px; overflow:visible;}
-    .top_visual  .swiper-slide {height: 100%;  display:flex; align-items: center; justify-content:center; transition:all 200ms linear; transform: scale(0.8);}
+    .top_visual  .swiper-slide {height: 100%;  display:flex; align-items: center; justify-content:center; transition:all 200ms linear; transform: scale(1);}
     .top_visual > img {width:50%; margin:0 auto; padding-top:30px;}
-    .top_visual .swiper-slide.swiper-slide-active{transform: scale(1.1);}
+    /* .top_visual .swiper-slide img {height:308px;} */
+    .top_visual .swiper-slide.swiper-slide-active{transform: scale(1.2);}
+    .top_visual .swiper-slide.swiper-slide-active img {filter: drop-shadow(0 10px 25px #121212)}
 
     .text_swiper {width:220px !important; margin:0 auto; }
     .text_swiper .swiper-container {width:220px !important; margin-left: 0px; margin-right: 0px; overflow:hidden;}
