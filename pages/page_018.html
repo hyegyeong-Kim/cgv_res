@@ -125,10 +125,7 @@
          },500);
          setTimeout(()=>{
             $('.modal').addClass('show')
-        },600)
-        setTimeout(()=>{
-            $('.modal ol li').addClass('active')
-        },700)
+        },1000)
  
  
          $('.device_wrap > div').scroll(function(){
@@ -186,14 +183,7 @@
     .modal::before {content:''; width:32px; height:4px; background:#d9d9d9; border-radius:2px; position:absolute; top:15px; left:50%; display:block; transform:translateX(-50%);}
     .modal ol {padding:36px 15px 32px; border-radius:24px;}
     
-    .modal ol li {margin-top:24px; opacity:0; transform:translateY(10px);}
-    .modal ol li:nth-of-type(1) {transition:0.7s cubic-bezier(.9,.03,.69,.22);}
-    .modal ol li:nth-of-type(2) {transition:0.7s 0.5s cubic-bezier(.9,.03,.69,.22);}
-    .modal ol li:nth-of-type(3) {transition:0.7s 0.7s cubic-bezier(.9,.03,.69,.22);}
-    .modal ol li:nth-of-type(4) {transition:0.7s 0.9s cubic-bezier(.9,.03,.69,.22);}
-    .modal ol li:nth-of-type(5) {transition:0.7s 1s cubic-bezier(.9,.03,.69,.22);}
-    .modal ol li:nth-of-type(6) {transition:0.7s 1.2s cubic-bezier(.9,.03,.69,.22);}
-    .modal ol li.active {opacity:1; transform:translateY(0px);}
+    .modal ol li {margin-top:24px; opacity:1; transform:translateY(10px);}
 
     .modal ol li span {color:#121212; font-size:18px; font-weight:700;}
     .modal ol li:first-of-type ~ :hover{text-shadow:0px 10px 10px 0px rgba(0, 0, 0, 0.5);}
@@ -206,7 +196,7 @@
     .modal ol li:first-of-type ~ li > div > span::before {content:''; width:2px; height:2px; margin-right:5px; background:#707070;; border-radius:50%; display:inline-block; position:absolute; top:5px; left:-6px;}
     .modal ol li:first-of-type ~ li > div > span > em {color:#E62307;}
 
-    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; bottom:0; left:0; z-index:3; display:block; transition: opacity 1s 1s cubic-bezier(.47,1.64,.41,.8), transform 0.7s 0.4s cubic-bezier(.47,1.64,.41,.8);}
+    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; bottom:0; left:0; z-index:3; display:block; transition: opacity 1s 0.5s cubic-bezier(.47,1.64,.41,.8), transform 0.7s 0.4s cubic-bezier(.47,1.64,.41,.8);}
     .device_wrap.active > div:after {opacity:1;}
 
     /* @keyframes fade_in_1 {

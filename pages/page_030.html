@@ -141,6 +141,13 @@
 
 <script>
     $(function(){
+
+        setTimeout(()=>{
+            $('.device_wrap > div').animate({
+                scrollTop : 2000
+            },1000)
+        },800)
+
         var li_offset = [];
 
         setTimeout(()=>{
@@ -172,7 +179,7 @@
                 spaceBetween: 5,
                 loop: true,
                 autoplay: {
-                    delay: 2000,
+                    delay: 3000,
                 },
             };
 
@@ -181,7 +188,7 @@
                 spaceBetween: 5,
                 loop: true,
                 autoplay: {
-                    delay: 2000,
+                    delay: 3000,
                 },
                 pagination: {
                     el: ".swiper-pagination",
@@ -199,11 +206,10 @@
     .device_wrap .header, .bottom {z-index:4 !important;}
     .wrap_inner {align-items:start;}
     .badge {position:absolute; top:0; left:0;}
-    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
+    .txt_wrap_s {padding-top:300px; opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
-    /* .txt_wrap_s > p {opacity:0; transform:translateY(500px); transition:transform 0.8s 0.3s, opacity 0.5s 0.5s;} */
-    .txt_wrap_s p {opacity:0;}
-    .txt_wrap_s.active p {animation:fadeIn 1s ease-in-out; opacity:1;}
+    .txt_wrap_s p {opacity:0; transform:translateY(300px); transition:all 0.5s 0.25s;}
+    .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
     .device_wrap > div > ul {background: linear-gradient(rgba(255,255,255,1) 0%, rgba(243,243,243,1) 1%, rgba(244,244,244,1) 100%); overflow-x:hidden;}
     .device_wrap > div > ul > li {padding-right:15px; padding-left:15px;}
     .device_wrap > div > ul > * + * {padding:16px 0;}

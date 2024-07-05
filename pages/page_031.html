@@ -7,10 +7,14 @@
 
     <div class="device_wrap">
         <div>
-            <p class="header"><img src="../images/D/write/header.png"/></p>
+            <p class="header">
+                <img src="../images/D/write/header.png"/>
+                <a class="click" href="#none"></a>
+            </p>
             <ul>
                 <li><img src="../images/D/write/01.png" alt=""></li>
                 <li class="board"><img src="../images/D/write/02.png" alt=""></li>
+                <li class="nopage hide"><img src="" alt=""></li>
                 <li class="add"><img src="../images/D/write/03.png" alt=""></li>
                 <li style="padding-bottom:0;"><img src="../images/D/write/04.png" alt=""></li>
             </ul>
@@ -30,23 +34,32 @@
         setTimeout(()=>{
             $('.txt_wrap_s, .device_wrap').addClass('active');
         },500);
-        $('.board').click(function(){
-            $('.board, .bottom').addClass('up')
+        $('.click').click(function(){
+            $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"0"})
+            setTimeout(()=>{
+                $('.header img').attr({"src":"../images/D/write/header_01.png"})
+                $('.board').css({"width":"100%" })
+                $('.board img').attr({"src":"../images/D/write/02_2.png"})
+                $('.nopage img').attr({"src":"../images/D/write/addimg.png"})
+                $('.bottom img').attr({"src":"../images/D/write/bottom_01.png"})
+            },600)
+            setTimeout(()=>{
+                $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"1"})
+            },1000)
         })
     });
 </script>
 
 <style>
-    .device_wrap .header, .bottom {z-index:4 !important;}
+    .device_wrap .header, .bottom {z-index:4 !important; transition:all 0.5s;}
     .wrap_inner {align-items:start;}
     .badge {position:absolute; top:0; left:0;}
-    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
+    .txt_wrap_s {padding-top:300px; opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
-    /* .txt_wrap_s > p {opacity:0; transform:translateY(500px); transition:transform 0.8s 0.3s, opacity 0.5s 0.5s;} */
-    .txt_wrap_s p {opacity:0;}
-    .txt_wrap_s.active p {animation:fadeIn 1s ease-in-out; opacity:1;}
+    .txt_wrap_s p {opacity:0; transform:translateY(300px); transition:all 0.5s 0.25s;}
+    .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
     .device_wrap > div {background-color:#fff;}
-    .device_wrap > div > ul {padding:0 15px; background:#fff; overflow-x:hidden;}
+    .device_wrap > div > ul {padding:0 15px; background:#fff; overflow-x:hidden; transition:all 0.5s;}
     .device_wrap > div > ul > * + * {padding:16px 0;}
     .device_wrap > div > ul > li > ol {padding:20px; background:#fff; border-radius:16px;}
     .device_wrap > div > ul > li > ol > * + * {margin-top:20px;}
@@ -55,12 +68,11 @@
     .device_wrap {margin-left:280px;}
     /* .device_wrap > div {overflow:hidden;} */
     .device_wrap img {width:100%;}
-    .board {width:70%; height:350px;}
-    .board.up {height:55px; transition:0.5s ease;}
+    .board {width:70%;}
     .add {width:110px; padding-bottom:0 !important;}
 
-    .bottom {background-color:#fff; transform:translateY(500px); transition:0.6s ease-out;}
-    .bottom.up {transform:translateY(0);}
+    .bottom {background-color:#fff;}
+    .click {width:60px;height:60px;position:absolute;top:43px; right:15px;display: block;}
 
     /* swiper */
     .main_visual {padding:0; transition:all 0.35s;}
@@ -82,24 +94,4 @@
                 transform:translateY(0px);
             }
         } */
-        @keyframes fadeIn{
-            0% {
-                opacity:0;
-                transform:translateY(100px);
-            }
-            50% {
-                opacity:0.5;
-                transform:translateY(-20px);
-            }
-
-            75% {
-                opacity:0.7;
-                transform:translateY(15px);
-            }
-
-            100% {
-                opacity:1;
-                transform:translateY(0px);
-            }
-        }
 </style>

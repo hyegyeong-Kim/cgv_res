@@ -62,6 +62,12 @@
         setTimeout(()=>{
             $('.txt_wrap_s, .device_wrap').addClass('active');
         },500);
+        setTimeout(()=>{
+            $('.device_wrap > div ol li dl > dt > img').addClass('active')
+        },1000)
+        setTimeout(()=>{
+            $('.device_wrap > div ol li dl > dt > img').removeClass('active')
+        },1900)
     });
 </script>
 
@@ -91,6 +97,7 @@
     .device_wrap > div ol {position:relative; z-index:10;}
     .device_wrap > div ol li dl > dt > img {transition:0.3s; cursor:pointer;}
     .device_wrap > div ol li dl > dt > img:hover{box-shadow:0px 10px 10px 0px rgba(0, 0, 0, 0.50);}
+    .device_wrap > div ol li dl > dt > img.active {box-shadow:0px 10px 10px 0px rgba(0, 0, 0, 0.50);}
 
     .device_wrap > div {overflow:hidden;}
     .device_wrap .header {z-index:1 !important;}

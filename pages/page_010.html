@@ -83,6 +83,7 @@
 
 <style>
     .main_visual .visual .swiper-wrapper .swiper-slide {padding:0px 3px 0 !important;}
+    .main_visual .swiper-wrapper .swiper-slide::after {display:none !important;}
     .now_movie .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0 !important; background:rgba(0, 0, 0, 0.7); border-radius:16px; overflow: hidden;} 
     .ott .visual .swiper-wrapper .swiper-slide {padding:0px 0px 0px !important; border-radius:16px; overflow: hidden;}
     .ott .visual .swiper-wrapper .swiper-slide::after {display:none !important;}
@@ -103,7 +104,7 @@
                             <img class="txt on" src="./images/A/cinema/02_txt.png" alt="">
                             <img class="icon on" src="./images/A/cinema/02_icon.png" alt="">
                         </div>
-                        <video autoplay muted playsinline>
+                        <video autoplay muted playsinline loop>
                             <source src="../video.mp4" type="video/mp4">
                         </video>
                     </div>
@@ -246,7 +247,7 @@
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
 
     .txt_wrap_s p, .txt_wrap_s p strong {margin-right:24px; font-weight:normal; flex:1;}
-    .txt_wrap_s p.active, .txt_wrap_s p.active strong {font-weight:700;}
+    .txt_wrap_s p.active, .txt_wrap_s p.active strong {font-weight:700 !important;}
     .txt_wrap_s p strong {width:152px;}
     .txt_wrap_s p span {width:523px;}
 

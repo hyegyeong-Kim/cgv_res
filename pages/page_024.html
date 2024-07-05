@@ -3,9 +3,12 @@
 
     <div class="device_wrap">
         <div>
-            <p class="header"><img src="./images/C/M/m_header.png"/></p>
+            <p class="header">
+                <img src="./images/C/M/m_header.png"/>
+                <a class="close" href="#none"></a>
+            </p>
             <div class="cont">
-                <img src="./images/C/M/m_main_01.png" alt="">
+                <img src="./images/C/M/m_main_01_2.png" alt="">
             </div>
         </div>
         <p class="bottom"><img src="./images/C/M/m_footer_01.png"/></p>
@@ -26,41 +29,53 @@
         },500);
 
 
-        $(".cont").on({
-            "mouseover":function() {
+        $(".bottom").on({
+            "click":function() {
                 $(".cont, .bottom").css({"opacity":"0"})
                 setTimeout(()=>{
-                    $(".cont, .bottom").css({"opacity":"1"})
                     $(".cont > img").attr({"src":"./images/C/M/m_main_02.png"});
                     $(".bottom > img").attr({"src":"./images/C/M/m_footer_02.png"});
-                },500)
-            },
-            "mouseout":function() {
-                $(".cont, .bottom").css({"opacity":"0"})
+                },600)
                 setTimeout(()=>{
                     $(".cont, .bottom").css({"opacity":"1"})
+                },800)
+            },
+        });
+
+        $(".close").on({
+            "click":function() {
+                $(".cont, .bottom").css({"opacity":"0"})
+                setTimeout(()=>{
                     $(".cont > img").attr({"src":"./images/C/M/m_main_01.png"});
                     $(".bottom > img").attr({"src":"./images/C/M/m_footer_01.png"});
-                },500)
+                },600)
+                setTimeout(()=>{
+                    $(".cont, .bottom").css({"opacity":"1"})
+                },800)
             }
         });
+
+
+
+
+
     });
 
 </script>
 
 <style>
-    
+    .close {width:60px;height:60px;position:absolute;top:43px; right:15px;display: block;}
     /* .wrap_inner {align-items:start;} */
     .badge {position:absolute; top:0; left:0;}
     .txt_wrap_s {opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
-    .txt_wrap_s p {opacity:0; transform:translateY(100px); transition: 1s 0.8s ease-out; }
+    .txt_wrap_s p {opacity:0; transform:translateY(100px); transition: 0.6s ease-out; }
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
     /* .bottom::before {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; left:0; right:0; bottom:0; z-index:1; display:block; transition:all 0.5s 1.5s;}
     .device_wrap.active > .bottom::before {opacity:1;} */
 
     .device_wrap {margin-left:280px;}
-    .cont,.bottom {transition:1s;}
+    .cont,.bottom {transition:0.5s;}
 
 
 

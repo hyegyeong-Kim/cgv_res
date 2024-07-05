@@ -5,7 +5,6 @@
         <div>
             <p class="header">
                 <img class="scroll" src="./images/B/time/header_02.png" alt="">
-                <img class="origin show" src="./images/B/time/header_01.png"/>
             </p>
             <ul>
                 <li>
@@ -38,18 +37,18 @@
         $('.device_wrap > div').scroll(function(){
             var scrollValue = $('.device_wrap > div').scrollTop();
             console.log(scrollValue) 
-            if(scrollValue <= 100){
-                $('.scroll').removeClass('show')
-                $('.origin').addClass('show')
+            if(scrollValue > 400){
+                $('.header').addClass('active')
             }else {
-                $('.scroll').addClass('show')
-                $('.origin').removeClass('show')
+                $('.header').removeClass('active')
             }
         });
     });
 </script>
 
 <style>
+    .header {transform:translateY(-500px); transition:all 0.5s;}
+    .header.active {transform:translateY(0px);}
     .wrap_inner {align-items:center;}
     .badge {position:absolute; top:0; left:0;}
     .txt_wrap_s {opacity:0; transition:all 0.5s;}
@@ -59,7 +58,6 @@
 
     .device_wrap {margin-left:280px;}
     .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}
-    .device_wrap > div > ul li {padding-top:16px !important;}
     ul li.show img {position:relative; z-index:1; transition:all 0.2s; opacity:0.5;}
     ul li.show img.on {opacity:1;}
 
