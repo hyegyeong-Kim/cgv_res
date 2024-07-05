@@ -103,7 +103,7 @@
         $('.device_wrap > div').scroll(function(){
 
             for(i=0; i<li_offset.length; i++){
-                if(($(this).scrollTop() + ($(this).height()*0.9)) > li_offset[i]){
+                if(($(this).scrollTop() + ($(this).height()*0.7)) > li_offset[i]){
                     $('.device_wrap > div > ul  > li.show > img').removeClass('on');
                     $('.device_wrap > div > ul  > li.show > img').eq(i).addClass('on');
                 }
