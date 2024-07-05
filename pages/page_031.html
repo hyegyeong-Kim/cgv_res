@@ -8,18 +8,18 @@
     <div class="device_wrap">
         <div>
             <p class="header">
-                <img src="../images/D/write/header.png"/>
+                <img src="./images/D/write/header.png"/>
                 <a class="click" href="#none"></a>
             </p>
             <ul>
-                <li><img src="../images/D/write/01.png" alt=""></li>
-                <li class="board"><img src="../images/D/write/02.png" alt=""></li>
+                <li><img src="./images/D/write/01.png" alt=""></li>
+                <li class="board"><img src="./images/D/write/02.png" alt=""></li>
                 <li class="nopage hide"><img src="" alt=""></li>
-                <li class="add"><img src="../images/D/write/03.png" alt=""></li>
-                <li style="padding-bottom:0;"><img src="../images/D/write/04.png" alt=""></li>
+                <li class="add"><img src="./images/D/write/03.png" alt=""></li>
+                <li style="padding-bottom:0;"><img src="./images/D/write/04.png" alt=""></li>
             </ul>
         </div>
-        <p class="bottom"><img src="../images/D/write/bottom.png"/></p>
+        <p class="bottom"><img src="./images/D/write/bottom.png"/></p>
     </div>
     <div class="txt_wrap_s">
         <p>
@@ -37,11 +37,11 @@
         $('.click').click(function(){
             $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"0"})
             setTimeout(()=>{
-                $('.header img').attr({"src":"../images/D/write/header_01.png"})
+                $('.header img').attr({"src":"./images/D/write/header_01.png"})
                 $('.board').css({"width":"100%" })
-                $('.board img').attr({"src":"../images/D/write/02_2.png"})
-                $('.nopage img').attr({"src":"../images/D/write/addimg.png"})
-                $('.bottom img').attr({"src":"../images/D/write/bottom_01.png"})
+                $('.board img').attr({"src":"./images/D/write/02_2.png"})
+                $('.nopage img').attr({"src":"./images/D/write/addimg.png"})
+                $('.bottom img').attr({"src":"./images/D/write/bottom_01.png"})
             },600)
             setTimeout(()=>{
                 $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"1"})
