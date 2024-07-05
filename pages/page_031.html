@@ -1,0 +1,105 @@
+<style>
+    .device_wrap > div > ul li {padding-top:16px !important;}
+</style>
+
+<div class="wrap_inner">
+    <strong class="badge">메인</strong>
+
+    <div class="device_wrap">
+        <div>
+            <p class="header"><img src="../images/D/write/header.png"/></p>
+            <ul>
+                <li><img src="../images/D/write/01.png" alt=""></li>
+                <li class="board"><img src="../images/D/write/02.png" alt=""></li>
+                <li class="add"><img src="../images/D/write/03.png" alt=""></li>
+                <li style="padding-bottom:0;"><img src="../images/D/write/04.png" alt=""></li>
+            </ul>
+        </div>
+        <p class="bottom"><img src="../images/D/write/bottom.png"/></p>
+    </div>
+    <div class="txt_wrap_s">
+        <p>
+            <strong>내 경험을 피드로 작성합니다.</strong><br>
+            필요시 사진도 첨부할 수 있습니다.
+        </p>
+    </div>
+</div>
+
+<script>
+    $(function(){
+        setTimeout(()=>{
+            $('.txt_wrap_s, .device_wrap').addClass('active');
+        },500);
+        $('.board').click(function(){
+            $('.board, .bottom').addClass('up')
+        })
+    });
+</script>
+
+<style>
+    .device_wrap .header, .bottom {z-index:4 !important;}
+    .wrap_inner {align-items:start;}
+    .badge {position:absolute; top:0; left:0;}
+    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
+    .txt_wrap_s.active {opacity:1;}
+    /* .txt_wrap_s > p {opacity:0; transform:translateY(500px); transition:transform 0.8s 0.3s, opacity 0.5s 0.5s;} */
+    .txt_wrap_s p {opacity:0;}
+    .txt_wrap_s.active p {animation:fadeIn 1s ease-in-out; opacity:1;}
+    .device_wrap > div {background-color:#fff;}
+    .device_wrap > div > ul {padding:0 15px; background:#fff; overflow-x:hidden;}
+    .device_wrap > div > ul > * + * {padding:16px 0;}
+    .device_wrap > div > ul > li > ol {padding:20px; background:#fff; border-radius:16px;}
+    .device_wrap > div > ul > li > ol > * + * {margin-top:20px;}
+    .device_wrap > div > ul > li > span {margin-bottom:12px; color:#121212; font-size:14px; font-weight:700; letter-spacing:-1.5%; display:block;}
+
+    .device_wrap {margin-left:280px;}
+    /* .device_wrap > div {overflow:hidden;} */
+    .device_wrap img {width:100%;}
+    .board {width:70%; height:350px;}
+    .board.up {height:55px; transition:0.5s ease;}
+    .add {width:110px; padding-bottom:0 !important;}
+
+    .bottom {background-color:#fff; transform:translateY(500px); transition:0.6s ease-out;}
+    .bottom.up {transform:translateY(0);}
+
+    /* swiper */
+    .main_visual {padding:0; transition:all 0.35s;}
+    .main_visual .swiper-container {margin-right:-20px}
+    .main_visual .visual .swiper-wrapper .swiper-slide {padding:0px 3px 0 !important;}
+
+    /* //swiper */
+    /* @keyframes fadeIn{
+            0% {
+                opacity:0;
+                transform:translateY(100px);
+            }
+            50% {
+                opacity:0.5;
+                transform:translateY(-30px);
+            }
+            100% {
+                opacity:1;
+                transform:translateY(0px);
+            }
+        } */
+        @keyframes fadeIn{
+            0% {
+                opacity:0;
+                transform:translateY(100px);
+            }
+            50% {
+                opacity:0.5;
+                transform:translateY(-20px);
+            }
+
+            75% {
+                opacity:0.7;
+                transform:translateY(15px);
+            }
+
+            100% {
+                opacity:1;
+                transform:translateY(0px);
+            }
+        }
+</style>
