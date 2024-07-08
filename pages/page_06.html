@@ -39,7 +39,7 @@
                                            </ul>
                                        </div>
                                    </div>
-                                   <div style="margin-top:40px;" class="text_swiper">
+                                   <div style="margin-top:60px;" class="text_swiper">
                                        <div class="visual swiper-container" style="width:220px">
                                            <ul class="swiper-wrapper">
                                                <li class="swiper-slide"><img src="./images/A/main/txt_01.png" /></li>
@@ -201,7 +201,7 @@
 
 
            var option_sec02 = {
-               spaceBetween:40,
+               spaceBetween:75,
                slidesPerView: 3,
                centeredSlides: true,
                roundLengths: true,
@@ -312,16 +312,19 @@
    .visual_wrap > div.inner {display:flex; transform:translateX(0); transition:all 0.25s;}
    .visual_wrap .inner > div {width:387px; background-color:#fff;}
 
-
+   .top_visual {margin-top:20px;}
    .top_visual > .swiper-container {margin-left: -120px; margin-right: -120px; overflow:visible;}
-   .top_visual  .swiper-slide {height: 100%;  display:flex; align-items: center; justify-content:center; transition:all 200ms linear; transform: scale(1.2) !important;}
+   .top_visual  .swiper-slide {height: 100%;  display:flex; align-items: center; justify-content:center; transition:all 200ms linear; transform: scale(1.3);}
    .top_visual > img {width:50%; margin:0 auto; padding-top:30px;}
    /* .top_visual .swiper-slide img {height:308px;} */
-   .top_visual .swiper-slide.swiper-slide-active{transform: scale(1.3);}
+   .top_visual .swiper-slide.swiper-slide-active{transform: scale(1.5);}
    .top_visual .swiper-slide.swiper-slide-active img {filter: drop-shadow(0 20px 10px rgba(0, 0, 0, 0.24))}
 
+   .top_visual .swiper-slide.swiper-slide-active.swiper-slide-duplicate {transform: scale(1.3) !important;}
+.top_visual .swiper-slide.swiper-slide-active.swiper-slide-duplicate img {filter:initial;}
 
-   .text_swiper {width:220px !important; margin:30px auto 0; }
+
+   .text_swiper {width:220px !important; margin:0 auto; }
    .text_swiper .swiper-container {width:220px !important; margin-left: 0px; margin-right: 0px; overflow:hidden;}
    .text_swiper .swiper-container img {min-width:220px !important;}
    /* //swiper */
