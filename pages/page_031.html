@@ -11,13 +11,15 @@
                 <img src="./images/D/write/header.png"/>
                 <a class="click" href="#none"></a>
                 <a class="back" href="#none"></a>
+                <a class="next" href="#none"></a>
+                <a class="reset" href="#none"></a>
             </p>
             <ul>
-                <li><img src="./images/D/write/01.png" alt=""></li>
+                <li class="who"><img src="./images/D/write/01.png" alt=""></li>
                 <li class="board"><img src="./images/D/write/02.png" alt=""></li>
                 <li class="nopage hide"><img style="display:none" src="/images/D/write/addimg.png" alt=""></li>
                 <li class="add"><img src="./images/D/write/03.png" alt=""></li>
-                <li style="padding-bottom:0;"><img src="./images/D/write/04.png" alt=""></li>
+                <li class="post" style="padding-bottom:0;"><img src="./images/D/write/04.png" alt=""></li>
             </ul>
         </div>
         <p class="bottom"><img src="./images/D/write/bottom.png"/></p>
@@ -38,10 +40,14 @@
         $('.click').click(function(){
             $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"0"})
             setTimeout(()=>{
+                $('.click').css({"display":"none" })
+                $('.next').addClass('on')
                 $('.header img').attr({"src":"./images/D/write/header_01.png"})
                 $('.board').css({"width":"100%" })
                 $('.board img').attr({"src":"./images/D/write/02_2.png"})
+                $('.nopage').css({"display":"block" })
                 $('.nopage img').css({"display":"block" })
+                $('.nopage img').attr({"src":"./images/D/write/addimg.png" })
                 $('.bottom img').attr({"src":"./images/D/write/bottom_01.png"})
             },600)
             setTimeout(()=>{
@@ -51,11 +57,54 @@
         $('.back').click(function(){
             $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"0"})
             setTimeout(()=>{
+                $('.click').css({"display":"block" })
+                $('.next').removeClass('on')
                 $('.header img').attr({"src":"./images/D/write/header.png"})
                 $('.board').css({"width":"70%" })
                 $('.board img').attr({"src":"./images/D/write/02.png"})
                 $('.nopage img').css({"display":"none" })
                 $('.bottom img').attr({"src":"./images/D/write/bottom.png"})
+            },600)
+            setTimeout(()=>{
+                $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"1"})
+            },1000)
+        })
+
+        $('.next').click(function(){
+            $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"0"})
+            setTimeout(()=>{
+                $('.next').removeClass('on')
+                $('.back').css({"display":"none" })
+                $('.reset').addClass('on')
+                $('.header img').attr({"src":"./images/D/write/header_02.png"})
+                $('.who').css({"display":"none" })
+                $('.board').css({"width":"100%" })
+                $('.board img').attr({"src":"./images/D/write/plus_1.png"})
+                $('.nopage').css({"display":"block" })
+                $('.nopage img').attr({"src":"./images/D/write/plus_2.png"})
+                $('.add').css({"width":"100%" })
+                $('.add img').attr({"src":"./images/D/write/plus_3.png"})
+                $('.post').css({"display":"none" })
+            },600)
+            setTimeout(()=>{
+                $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"1"})
+            },1000)
+        })
+
+        $('.reset').click(function(){
+            $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"0"})
+            setTimeout(()=>{
+                $('.reset').removeClass('on')
+                $('.back').css({"display":"block" })
+                $('.click').css({"display":"block" })
+                $('.header img').attr({"src":"./images/D/write/header.png"})
+                $('.who').css({"display":"block" })
+                $('.board').css({"width":"70%" })
+                $('.board img').attr({"src":"./images/D/write/02.png"})
+                $('.nopage').css({"display":"none" })
+                $('.add').css({"width":"110px" })
+                $('.add img').attr({"src":"./images/D/write/03.png"})
+                $('.post').css({"display":"block" })
             },600)
             setTimeout(()=>{
                 $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"1"})
@@ -88,6 +137,10 @@
     .bottom {background-color:#fff;}
     .click {width:60px;height:60px;position:absolute;top:43px; right:15px;display: block;}
     .back {width:60px;height:60px;position:absolute;top:43px; left:15px;display: block;}
+    .reset {width:60px;height:60px;position:absolute;top:43px; right:15px;display:none;}
+    .reset.on {display:block;}
+    .next {width:60px;height:60px;position:absolute;top:43px; right:15px;display:none;}
+    .next.on {display:block;}
     /* swiper */
     .main_visual {padding:0; transition:all 0.35s;}
     .main_visual .swiper-container {margin-right:-20px}
