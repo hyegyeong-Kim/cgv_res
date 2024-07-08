@@ -186,14 +186,14 @@
 
 
            var option_sec02 = {
-               spaceBetween: 30,
+               spaceBetween:30,
                slidesPerView: 3,
                centeredSlides: true,
                roundLengths: true,
-               autoplay: {
-                   delay: 5000,
-                   disableOnInteraction: false
-               },
+            //    autoplay: {
+            //        delay:000,
+            //        disableOnInteraction: false
+            //    },
                
                loop: true,
                loopAdditionalSlides: 10,
@@ -201,23 +201,15 @@
                    el: '.sec07 .swiper-pagination',
                    clickable: true,
                },
-               // on: {
-               //     init: function () { },
-               //     slideChange: function () { },
-               // },
-               // navigation: {
-               //     nextEl: '.visual .swiper-button-next',
-               //     prevEl: '.visual .swiper-button-prev',
-               // },
            };
 
 
            var option_sec03 = {
                 slidesPerView: 'auto',
-                spaceBetween: 10,
+                spaceBetween: 30,
                 loop: true,
                 autoplay: {
-                    delay: 2000,
+                    delay: 5000,
                 },
                 pagination: {
                     el: ".swiper-pagination",
@@ -249,7 +241,7 @@
    .device_wrap .header, .bottom {z-index:4 !important;}
    .wrap_inner {align-items:start;}
    .badge {position:absolute; top:0; left:0;}
-   .txt_wrap_s {padding-bottom:300px; opacity:0; transition:all 0.5s;}
+   .txt_wrap_s {padding-top:300px; opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
     .txt_wrap_s p {opacity:0; transform:translateY(100px); transition: 1s 0.8s ease-out; line-height:150%;}
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
