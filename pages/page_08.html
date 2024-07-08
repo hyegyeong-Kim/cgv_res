@@ -79,6 +79,13 @@
             // if(fn_show <= 7429){
             //     $('.show.fn_show img').addClass('on');
             // }
+            var scrollValue = $('.device_wrap > div').scrollTop();
+            console.log(scrollValue) 
+            if(scrollValue < 110){
+                $('.device_wrap.active ul').removeClass('show')
+            }else {
+                $('.device_wrap.active ul').addClass('show')
+            }
 
         });
         var option_sec01 = {
