@@ -10,11 +10,12 @@
             <p class="header">
                 <img src="./images/D/write/header.png"/>
                 <a class="click" href="#none"></a>
+                <a class="back" href="#none"></a>
             </p>
             <ul>
                 <li><img src="./images/D/write/01.png" alt=""></li>
                 <li class="board"><img src="./images/D/write/02.png" alt=""></li>
-                <li class="nopage hide"><img src="" alt=""></li>
+                <li class="nopage hide"><img style="display:none" src="/images/D/write/addimg.png" alt=""></li>
                 <li class="add"><img src="./images/D/write/03.png" alt=""></li>
                 <li style="padding-bottom:0;"><img src="./images/D/write/04.png" alt=""></li>
             </ul>
@@ -40,8 +41,21 @@
                 $('.header img').attr({"src":"./images/D/write/header_01.png"})
                 $('.board').css({"width":"100%" })
                 $('.board img').attr({"src":"./images/D/write/02_2.png"})
-                $('.nopage img').attr({"src":"./images/D/write/addimg.png"})
+                $('.nopage img').css({"display":"block" })
                 $('.bottom img').attr({"src":"./images/D/write/bottom_01.png"})
+            },600)
+            setTimeout(()=>{
+                $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"1"})
+            },1000)
+        })
+        $('.back').click(function(){
+            $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"0"})
+            setTimeout(()=>{
+                $('.header img').attr({"src":"./images/D/write/header.png"})
+                $('.board').css({"width":"70%" })
+                $('.board img').attr({"src":"./images/D/write/02.png"})
+                $('.nopage img').css({"display":"none" })
+                $('.bottom img').attr({"src":"./images/D/write/bottom.png"})
             },600)
             setTimeout(()=>{
                 $(".device_wrap.active > div > ul, .header, .bottom").css({"opacity":"1"})
@@ -73,7 +87,7 @@
 
     .bottom {background-color:#fff;}
     .click {width:60px;height:60px;position:absolute;top:43px; right:15px;display: block;}
-
+    .back {width:60px;height:60px;position:absolute;top:43px; left:15px;display: block;}
     /* swiper */
     .main_visual {padding:0; transition:all 0.35s;}
     .main_visual .swiper-container {margin-right:-20px}
