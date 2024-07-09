@@ -16,13 +16,14 @@ $(document).ready(function(){
      /* add 24.07.09 panel */
      var link_arry = {
         title:['메인','예매','통합결제','피드'], //각 타이틀
+        start_title:[3, 12, 20, 27], //각첫번째 페이지
         start:[4, 13, 21, 28],
         last:[33]
     };
 
     for(i=0; i<link_arry.title.length; i++){
         $('.panel').append(`<dl>
-            <dt><a href="/?scene=`+link_arry.start[i]+`">`+link_arry.title[i]+`</a></dt>
+            <dt><a href="/?scene=`+link_arry.start_title[i]+`">`+link_arry.title[i]+`</a></dt>
             <dd>
                 <ul></ul>
             </dd>
