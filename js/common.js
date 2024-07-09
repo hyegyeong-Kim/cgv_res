@@ -16,7 +16,7 @@ $(document).ready(function(){
      /* add 24.07.09 panel */
      var link_arry = {
         title:['메인','예매','통합결제','피드'], //각 타이틀
-        start:[2, 12, 20, 27],
+        start:[4, 13, 21, 28],
         last:[33]
     };
 
