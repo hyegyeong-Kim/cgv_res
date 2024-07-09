@@ -13,6 +13,54 @@ $(document).ready(function(){
     },350);
     link.ajax(Number(scene));
 
+     /* add 24.07.09 panel */
+     var link_arry = {
+        title:['메인','예매','통합결제','피드'], //각 타이틀
+        start:[2, 12, 20, 27],
+        last:[33]
+    };
+
+    for(i=0; i<link_arry.title.length; i++){
+        $('.panel').append(`<dl>
+            <dt><a href="/?scene=`+link_arry.start[i]+`">`+link_arry.title[i]+`</a></dt>
+            <dd>
+                <ul></ul>
+            </dd>
+        </dl>`);
+
+        if(link_arry.start[i+1] != undefined){
+
+            for(j=link_arry.start[i]; j < link_arry.start[i+1]; j++){
+                $('.panel dl').eq(i).find('ul').append(`<li>
+                    <a href="/?scene=`+j+`">`+((j - link_arry.start[i]) + 1)+`</a>
+                </li>`);
+            }
+
+        } else {
+
+            for(j=link_arry.start[i]; j < (link_arry.last[0] + 1); j++){
+                console.log('last j : '+j,' / ',i)
+                $('.panel dl').eq(i).find('ul').append(`<li>
+                    <a href="/?scene=`+j+`">`+((j - link_arry.start[i]) + 1)+`</a>
+                </li>`);
+            }
+
+        }
+    }
+    
+    $('.panel_cont').click(function(){
+        if($('.panel_menu').hasClass('close')){
+            $('.panel_menu').removeClass('close');
+        } else {
+            $('.panel_menu').addClass('close');
+        }
+    });
+
+    if(scene != 1){
+        $('.panel').addClass('show');
+    }
+    /* //add 24.07.09 panel */
+
 });
 
 const link = {
