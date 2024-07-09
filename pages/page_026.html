@@ -1,26 +1,75 @@
-<strong class="badge">피드</strong>
-<div class="txt_wrap_s ac">
-        <strong>영화후기, 액티비티 등 CGV의 모든 활동을 공유하고<br>
-            사용자들과 교류할 수 있습니다.</strong>
-        <p>사용자는 관람내역, 구매내역으로 쉽게 피드를 작성하여<br>
-            경험을 공유할 수 있으며, 타인의 피드백을 받고, 리워드도<br>
-            받을 수 있습니다.</p>
+<div class="wrap_inner">
+    <strong class="badge">통합결제</strong>
+
+    <div class="device_wrap">
+        <div>
+            <p class="header"><img src="./images/C/F/f_header.png"/></p>
+            <div class="cont">
+                <img src="./images/C/F/f_main.png" alt="">
+            </div>
+        </div>
+        <p class="bottom"><img src="./images/C/F/f_footer.png"/></p>
+    </div>
+    <div class="txt_wrap_s">
+        <p>
+            결제 완료 후,<br> 
+            <strong>선택한 정보들에 대해</strong><br>
+            <strong>명확하게 인지가능하도록</strong><br>
+            구성하였습니다. 
+        </p>
+    </div>
 </div>
 
 <script>
     $(function(){
         setTimeout(()=>{
-            $('.txt_wrap_s, .badge').addClass('active');
+            $('.txt_wrap_s, .device_wrap').addClass('active');
         },500);
+
+
+        let preScrollTop = 0;
+
+        $('.device_wrap > div').scroll(function(){
+            var scrollValue = $('.device_wrap > div').scrollTop();
+            let nextScrollTop = scrollValue;
+
+            if(preScrollTop < nextScrollTop) {
+                $('.bottom > img ').css({
+                    top:($('.bottom img').height())
+                });
+            }
+            else { // (preScrollTop > nextScrollTop)
+                $('.bottom > img').removeAttr('style');
+                $('.float_wrap').css({
+                    top:-$('.bottom img').height() + 20
+                });
+            }
+            preScrollTop = nextScrollTop;
+        })
+
+
+
+
     });
+
 </script>
 
 <style>
-    .wrap {flex-direction:column; overflow:hidden;}
-    .badge {font-size:36px;; margin-bottom:40px; transform:translateY(100px); opacity:0; transition: 0.5s ease-out;}
-    .badge.active {opacity:1; transform:translateY(0);}
-    .txt_wrap_s strong {transform:translateY(200px); opacity:0; transition: 0.5s 0.7s ease-out; line-height:150%;}
-    .txt_wrap_s.active strong {opacity:1; transform:translateY(0);}
-    .txt_wrap_s p {color:#777; font-weight:300; transform:translateY(300px); opacity:0; transition:all 0.5s 1s; line-height:150%;}
+    
+    /* .wrap_inner {align-items:start;} */
+    .badge {position:absolute; top:0; left:0;}
+    .txt_wrap_s {opacity:0; transition:all 0.5s;}
+    .txt_wrap_s.active {opacity:1;}
+    .txt_wrap_s p {opacity:0; transform:translateY(100px); transition: 1s 0.8s ease-out; }
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
+    /* .bottom::before {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; left:0; right:0; bottom:0; z-index:1; display:block; transition:all 0.5s 1.5s;}
+    .device_wrap.active > .bottom::before {opacity:1;} */
+    .device_wrap > div {background-color:#f2f2f2;}
+    .device_wrap {margin-left:280px;}
+    .cont,.bottom {transition:1s;}
+    .bottom {width:387px; height:115px; overflow:hidden;}
+    .bottom > img {position:absolute; top:0px; left:0; right:0; bottom:0; transition:0.5s;}
+
+
+
 </style>

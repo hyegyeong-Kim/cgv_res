@@ -6,88 +6,69 @@
             <p class="header"><img src="./images/screen/main_header.png"/></p>
             <ul>
                 <li><img src="./images/screen/01.png"/></li>
-                <li class="show" style="padding:30px 15px 0;"><img class="on" src="./images/screen/02.png"/></li>
-                <li  style="padding:16px 15px 0;"><img src="./images/screen/03.png"/></li>
-                <li class="show video video_1" style="padding:16px 15px;">
+                <li style="padding:30px 15px 0 !important;"><img src="./images/screen/02.png"/></li>
+                <li class="show" style="padding:16px 15px 0;"><img src="./images/screen/03.png"/></li>
+                <li class="video video_1" style="padding: 16px 15px 0;">
                     <img src="./images/screen/04.png"/>
                     <video autoplay muted playsinline loop>
                         <source src="./main_11.mp4" type="video/mp4">
                     </video>
                 </li>
-                <li style="padding: 0 15px;" class="svideo video_2">
+                <li style="padding: 16px 15px 0;" class="show video video_2">
                     <img src="./images/screen/05.png"/>
                     <video autoplay muted playsinline loop>
                         <source src="./main_2.mp4" type="video/mp4">
                     </video>
                 </li>
-                <li class="show" style="padding:16px 15px 0;"><img src="./images/screen/06.png"/></li>
-                <li  style="padding:16px 15px 0;"><img src="./images/screen/07.png"/></li>
-                <li style="padding: 0 15px;" class="video video_3">
+                <li style="padding: 16px 15px 0;"><img src="./images/screen/06.png"/></li>
+                <li class="show" style="padding: 16px 15px 0;"><img src="./images/screen/07.png"/></li>
+                <li style="padding: 16px 15px 0;" class="show video video_3">
                     <img src="./images/screen/08.png"/>
                     <video autoplay muted playsinline loop>
                         <source src="./main_3.mp4" type="video/mp4">
                     </video>
                 </li>
-                <li class="show" style="padding:16px 15px 0;"><img src="./images/screen/09.png"/></li>
-                <li  style="padding:16px 15px 0;"><img src="./images/screen/10.png"/></li>
-                <li  style="padding:16px 15px 0;"><img src="./images/screen/11.png"/></li>
-                <li style="padding:16px 15px 0;"><img src="./images/screen/12.png"/></li>
-                <li><img src="./images/screen/13.png"/></li>
-                <li class="show fn" style="padding:16px 15px 0; padding-bottom: 20px;"><img src="./images/screen/14.png"/></li>
+                <li style="padding: 16px 15px 0;"><img src="./images/screen/09.png"/></li>
+                <li class="show" style="padding: 16px 15px 0;"><img src="./images/screen/10.png"/></li>
+                <li class="show" style="padding: 16px 15px 0;"><img src="./images/screen/11.png"/></li>
+                <li class="show" style="padding: 16px 15px 0;"><img src="./images/screen/12.png"/></li>
+                <li class="show" style="padding: 16px 15px 0;"><img src="./images/screen/13.png"/></li>
+                <li class="fn" style="padding: 16px 15px 20px;"><img src="./images/screen/14.png"/></li>
             </ul>
         </div>
         <p class="bottom"><img src="./images/screen/TabBar.png"/></p>
     </div>
     <div class="txt_wrap_s">
-        <p><strong>개인화된 검색기능이 추가</strong>되었고<br/> <strong>새로운 서비스의 쉬운 발견</strong>이 가능합니다.</p>
+        <p>영화, 액티비티 등<br/> <strong>다양한 피드 서비스</strong>를 통해<br/> <strong>CGV에 머무르며, 즐길 수 있는 이야기</strong>가<br/> 풍성해졌습니다.</p>
     </div>
 </div>
 
 <script>
     $(function(){
-
-        setTimeout(()=>{
-            $('.device_wrap > div').animate({
-                scrollTop : 300
-            },700)
-         },700)
         var li_offset = [];
 
         setTimeout(()=>{
             $('.txt_wrap_s, .device_wrap').addClass('active');
-            console.log($('.device_wrap > div > ul > li.show'))
             $('.device_wrap > div > ul > li.show').each(function(index){
                 li_offset.push($(this).find('img').offset().top);
-                console.log(li_offset)
             });
         },500);
-        setTimeout(()=>{
-            $('.device_wrap.active > div > ul').addClass('show');
-        },1000)
-        
 
         $('.device_wrap > div').scroll(function(){
-
             for(i=0; i<li_offset.length; i++){
                 if(($(this).scrollTop() + ($(this).height()*0.7)) > li_offset[i]){
+                    $('.device_wrap.active ul').addClass('show')
                     $('.device_wrap > div > ul  > li.show > img').removeClass('on');
                     $('.device_wrap > div > ul  > li.show > img').eq(i).addClass('on');
                 }
             }
-            // let fn_show = $('.fn').offset().top
-            // console.log(fn_show)
-            // if(fn_show <= 7429){
-            //     $('.show.fn_show img').addClass('on');
-            // }
             var scrollValue = $('.device_wrap > div').scrollTop();
             console.log(scrollValue) 
-            if(scrollValue < 110){
+            if(scrollValue < 700){
                 $('.device_wrap.active ul').removeClass('show')
-            }else {
-                $('.device_wrap.active ul').addClass('show')
             }
-
         });
+
         var option_sec01 = {
                 slidesPerView: 1.1,
                 spaceBetween: 5,
@@ -137,50 +118,48 @@
         var swiper = new Swiper('.main_visual .visual.swiper-container', option_sec01);
         var swiper = new Swiper('.top_visual .visual.swiper-container', option_sec02);
         var swiper = new Swiper('.text_swiper .visual.swiper-container', option_sec03);
-    });
+
+        setTimeout(()=>{
+            $('.device_wrap > div').animate({
+                scrollTop : 700
+            },700)
+         },700)
+        });
 </script>
 
 <style>
     .device_wrap .header, .bottom {z-index:4 !important;}
     .wrap_inner {align-items:center;}
     .badge {position:absolute; top:0; left:0;}
-    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s 0.6s;}
+    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
-    .txt_wrap_s p {opacity:0; transform:translateY(300px); transition:all 0.5s 1s ease-out;}
+    .txt_wrap_s p {opacity:0; transform:translateY(300px); transition:all 0.5s 0.25s;}
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
+
+    .device_wrap {margin-left:280px;}
+    .device_wrap.active > div > ul {background: linear-gradient(rgba(255,255,255,1) 0%, rgba(243,243,243,1) 1%, rgba(244,244,244,1) 100%); overflow-x:hidden;}
+    .device_wrap.active > div > ul > li:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:1; transition:all 0.5s;}
+    .device_wrap.active > div > ul.show > li:after {opacity:1;}
+
+
     ul li.show img {position:relative; z-index:3; transition:all 0.2s; opacity:0.5;}
     ul li.show img.on {opacity:1;}
 
-    .device_wrap {margin-left:280px; position:relative; overflow:hidden;}
-    /* .device_wrap > div:after {background-color:rgba(0,0,0,0.7); opacity:1; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:0;  transition:all 0.25s;} */
-    .device_wrap:before,.device_wrap:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; right:34px; left:11px; display:block; transition:all 0.2s 0.5s cubic-bezier(.47,1.64,.41,.8);}
-    .device_wrap:before {height:163px; border-radius:50px 50px 0 0; top:13px;}
-    .device_wrap:after {height:84px; border-radius:0 0 50px 50px; bottom:32px;}
-    /* .device_wrap.active:before, .device_wrap.active:after {opacity:1; z-index:1;} */
-    /* .device_wrap > div >ul {background:linear-gradient(to top, #fcfcfc, #f4f4f4);;} */
-
-    .device_wrap > div > ul {background: linear-gradient(rgba(255,255,255,1) 0%, rgba(243,243,243,1) 1%, rgba(244,244,244,1) 100%); overflow-x:hidden;}
-    .device_wrap.active > div > ul > li:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:1; transition:all 0.7s 0.6s;}
-    .device_wrap.active > div > ul.show > li:after {opacity:1;}
-
     .device_wrap img {width:100%;}
+    .device_wrap li.movie img {transition:all 0.35s;}
     .device_wrap .change_list > img {margin-bottom:30px;}
     .device_wrap a {width:40px; height:40px; font-size:0; position:absolute; top:-10px; right:10px; z-index:3; opacity:0; transition:all 0.4s 1.5s;}
-    .device_wrap.active a {opacity:1;}
 
-    .device_wrap li.movie img {transition:all 0.35s;}
     .video {position:relative; overflow:hidden;}
     .video > img {position:relative; z-index:2;}
-    .video_1 video {width:357px; height:390px; border-radius:24px; object-fit:fill; position:absolute; top:15px; left:15px; right:15px; z-index:2;}
-    .video_2 video {width:190px; height:337px; border-radius:8px; object-fit:fill; position:absolute; bottom:154px; left:25px; z-index:1;}
-    .video_3 video {width:357px; height:280px; border-radius:8px 8px 0 0; object-fit:fill; position:absolute; top:15px; left:15px; right:15px; z-index:1;}
-    .video_3 > img {z-index:1;}
+    .video_1 video {width:357px; height:390px; border-radius:24px; object-fit:fill; position:absolute; top:15px; left:15px; right:15px; z-index:1;}
+    .video_2 video {width:190px; height:337px; border-radius:8px; object-fit:fill; position:absolute; bottom:154px; left:25px; z-index:3;}
+    .video_3 video {width:357px; height:280px; border-radius:8px 8px 0 0; object-fit:fill; position:absolute; top:15px; left:15px; right:15px; z-index:2;}
 
     /* swiper */
     .main_visual {padding:0px 15px 0; transition:all 0.35s;}
     .main_visual .swiper-container {margin-right: -14px}
     .main_visual .visual .swiper-wrapper .swiper-slide {padding:0px 3px 0 !important;}
-    .main_visual .visual .swiper-wrapper li.swiper-slide::after {background-color:transparent !important;}
     .movie {min-height:500px;}
     .movie .change_list > img{transition:all 0.2s;}
     .movie .main_visual{display:none; transition:all 0.2s;}
@@ -199,4 +178,6 @@
     .text_swiper .swiper-container {width:220px !important; margin-left: 0px; margin-right: 0px; overflow:hidden;}
     .text_swiper .swiper-container img {min-width:220px !important;}
     /* //swiper */
+
+
 </style>

@@ -50,9 +50,9 @@
     </div>
     <div class="txt_wrap_s">
         <p>
-            <strong>할인을 자동으로 적용</strong>하여<br>
-            <strong>정보를 미리 확인</strong>할 수 있도록 하고<br>
-            <strong>할인정보를 조정</strong> 또한 쉽게 조정할 수 있습니다.
+            <strong>상품 이미지 노출</strong>을 통해<br>
+            <strong>다양하게 구매한 상품을</strong><br>
+            <strong>직관적으로 파악할</strong>수 있도록 하였습니다.
         </p>
     </div>
 </div>
@@ -62,12 +62,6 @@
         setTimeout(()=>{
             $('.txt_wrap_s, .device_wrap').addClass('active');
         },500);
-        setTimeout(()=>{
-            $('.device_wrap > div ol li dl > dt > img').addClass('active')
-        },1000)
-        setTimeout(()=>{
-            $('.device_wrap > div ol li dl > dt > img').removeClass('active')
-        },1900)
     });
 </script>
 
@@ -95,9 +89,6 @@
     .device_wrap > div ol > li > div > dl > dt {margin-right:6px;}
     .device_wrap > div ol > li > div > img {width:83px;}
     .device_wrap > div ol {position:relative; z-index:10;}
-    .device_wrap > div ol li dl > dt > img {transition:0.3s; cursor:pointer;}
-    .device_wrap > div ol li dl > dt > img:hover{box-shadow:0px 10px 10px 0px rgba(0, 0, 0, 0.50);}
-    .device_wrap > div ol li dl > dt > img.active {box-shadow:0px 10px 10px 0px rgba(0, 0, 0, 0.50);}
 
     .device_wrap > div {overflow:hidden;}
     .device_wrap .header {z-index:1 !important;}

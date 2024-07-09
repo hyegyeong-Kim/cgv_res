@@ -5,54 +5,16 @@
         <div>
             <p class="header"><img src="./images/C/header_01.png"/></p>
             <ul>
-                <li style="padding-top:24px !important;">
-                    <ol>
-                        <li>
-                            <img style="margin-top:0;" src="./images/C/01/01_title.png" alt="">
-                            <img class="img" src="./images/C/01/01_img.png" alt="">
-                            <div>
-                                <dl>
-                                    <dt><img src="./images/C/01/01_tag.png" alt=""></dt>
-                                    <dd><img src="./images/C/01/01_pay.png" alt=""></dd>
-                                </dl>
-                                <img src="./images/C/01/01_discount.png" alt="">
-                            </div>
-                        </li>
-                        <li><img src="./images/C/01/01_2.png" alt=""></li>
-                        <li><img src="./images/C/01/01_3.png" alt=""></li>
-                    </ol>
-                </li>
-                <li style="margin:20px 0;">
-                    <img src="./images/C/02.png" alt="">
-                </li>
-                <li>
-                    <img src="./images/C/03.png" alt="">
-                </li>
-                <li>
-                    <ol>
-                        <li>
-                            <img src="./images/C/04/04_title.png" alt="">
-                            <div>
-                                <img src="./images/C/04/04_1.png" alt="">
-                            </div>
-                            <img src="./images/C/04/04_2.png" alt="">
-                        </li>
-                        <li><img src="./images/C/04/04_3.png" alt=""></li>
-                        <li><img src="./images/C/04/04_4.png" alt=""></li>
-                        <li><img src="./images/C/04/04_5.png" alt=""></li>
-                    </ol>
-                </li>
-                <li><img src="./images/C/05.png" alt=""></li>
-                <li><img src="./images/C/06.png" alt=""></li>
+                <li><img src="./images/C/full_img.png" alt=""></li>
             </ul>
         </div>
         <p class="bottom"><img src="./images/C/footer.png"/></p>
     </div>
     <div class="txt_wrap_s">
         <p>
-            <strong>상품 이미지 노출</strong>을 통해<br>
-            <strong>다양하게 구매한 상품을</strong><br>
-            <strong>직관적으로 파악할</strong>수 있도록 하였습니다.
+            <strong>결제 완료까지</strong> 필요한 과정을<br>
+            <strong>사용자가 명확하게 구별하여 인지</strong>할 수 있도록<br>
+            <strong>카드형 UI로 섹션</strong>을 구성했습니다.
         </p>
     </div>
 </div>
@@ -66,38 +28,16 @@
 </script>
 
 <style>
-    
-    /* .wrap_inner {align-items:start;} */
+    .wrap_inner {align-items:start;}
     .badge {position:absolute; top:0; left:0;}
-    .txt_wrap_s {opacity:0; transition:all 0.5s;}
+    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
     .txt_wrap_s.active {opacity:1;}
-    .txt_wrap_s p {opacity:0; transform:translateY(100px); transition: 1s 0.8s ease-out; }
+    .txt_wrap_s p {padding-top:200px; opacity:0; transform:translateY(100px); transition: 1s 0.8s ease-out; }
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
     /* .bottom::before {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; left:0; right:0; bottom:0; z-index:1; display:block; transition:all 0.5s 1.5s;}
     .device_wrap.active > .bottom::before {opacity:1;} */
 
     .device_wrap {margin-left:280px;}
-    .device_wrap > div > ul {background:#f4f4f4;;}
-    .device_wrap > div > ul  > li {padding:12px 15px 0;}
-    .device_wrap > div ol {padding:24px 20px; border-radius:16px; background:#fff;}
-    .device_wrap > div ol li::after {content:''; width:100%; height:1px; margin:20px 0; background-color:#f0f0f0;; display:block;}
-    .device_wrap > div ol li:last-of-type::after {display:none;}
-    .device_wrap > div ol > li > * {margin:16px 0;}
-    .device_wrap > div ol > li .img {width:183px;}
-    .device_wrap > div ol > li > div {padding:12px 14px; border:1px solid #d9d9d9; border-radius:8px; display:flex; align-items:center; justify-content:space-between;}
-    .device_wrap > div ol > li > div > dl {display:flex; align-items:center;}
-    .device_wrap > div ol > li > div > dl > dt {margin-right:6px;}
-    .device_wrap > div ol > li > div > img {width:83px;}
-    .device_wrap > div ol {position:relative; z-index:10;}
-
-    .device_wrap > div {overflow:hidden;}
-    .device_wrap .header {z-index:1 !important;}
-    /* .device_wrap.active .header:after {transform:translateY(0px); opacity:1;} */
-    /* .device_wrap .header:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.5; content:''; position:absolute; top:0; bottom:9px; left:0; z-index:1; display:block; transform:translateY(900px); transition: opacity 1.3s 1.2s ease-out, transform 0.7s 0.4s ease-out;} */
-    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; bottom:0; left:0; z-index:0; display:block; transition: opacity 1s ease-out;}
-    .device_wrap.active > div:after {opacity:1; z-index:2;}
-    .device_wrap img {width:100%;}
-    .bottom {z-index:1 !important;}
     /* .device_wrap > div {overflow:hidden;} */
     /* .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:155px; bottom:0; left:0; z-index:1; display:block; transition:all 0.5s 1.5s;}
     .device_wrap.active > div:after {opacity:1;} */

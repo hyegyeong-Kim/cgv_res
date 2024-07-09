@@ -3,7 +3,7 @@
     <div class="device_wrap">
         <div>
             <p class="header"><img src="./images/screen/main_header.png"/></p>
-            <ul class="blur_wrap">
+            <ul>
                 <li><img src="./images/screen/01.png"/></li>
                 <li><img src="./images/screen/02.png"/></li>
                 <li><img src="./images/screen/03.png"/></li>
@@ -24,8 +24,8 @@
     </div>
     <div class="txt_wrap_s">
         <p>
-            <strong>CGV의 주요 서비스를 탭으로 구성하여</strong>
-            <p style="color:#777">각 서비스로의 진입이 쉬워집니다.</p>
+            <strong>이제, 새로운 CGV를 <br>
+                한번 만나볼까요</strong>
         </p>
     </div>
 </div>
@@ -47,9 +47,9 @@
     .device_wrap {margin-left:280px;}
     .device_wrap > div {overflow:hidden; ;}
     /* .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0.5; content:''; position:absolute; top:155px; bottom:0; left:0; z-index:1; display:block; transform:translateY(900px); transition: opacity 1.3s 1.2s cubic-bezier(.17,.84,.44,1), transform 1s 0.5s cubic-bezier(.47,1.64,.41,.8);} */
-    .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:155px; bottom:0; left:0; z-index:1; display:block; transform:translateY(900px); transition: opacity 1.5s 0.5s;}
-    .device_wrap.active > div:after {transform:translateY(0); opacity:1;}
+    /* .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:155px; bottom:0; left:0; z-index:1; display:block; transform:translateY(900px); transition: opacity 1.5s 0.5s;}
+    .device_wrap.active > div:after {transform:translateY(0); opacity:1;} */
     .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}
-    .blur_wrap {opacity:1; filter:blur(0); transition:all 1.5s 0.5s;}
-    .device_wrap.active .blur_wrap {opacity:0.5; filter:blur(4px);}
+    /* .blur_wrap {opacity:1; filter:blur(0); transition:all 1.5s 0.5s;}
+    .device_wrap.active .blur_wrap {opacity:0.5; filter:blur(4px);} */
 </style>

@@ -3,11 +3,8 @@
 
     <div class="device_wrap">
         <div>
-            <p class="header">
-                <img class="scroll" src="./images/B/time/header_02.png" alt="">
-            </p>
             <ul>
-                <li>
+                <li style="padding-top:0px !important;">
                     <img src="./images/B/time/main.png" alt="">
                 </li>
             </ul>
@@ -16,9 +13,9 @@
     </div>
     <div class="txt_wrap_s">
         <p>
-            화면 스크롤시 <br>
-            <strong>일정 등 주요정보를 상단에 고정</strong>해서 <br>
-            사용자가 프로세스에 더 집중할 수 있도록 합니다. 
+            <strong>나의 극장을 설정할 수 있고</strong><br>
+            해당 극장에서 <strong>상영하는 영화들을 상영관별로 정렬</strong>하여<br>
+            인지하기 쉽도록 구성합니다.
         </p>
     </div>
 </div>
@@ -33,22 +30,11 @@
                 li_offset.push($(this).find('img').offset().top);
             });
         },500);
-
-        $('.device_wrap > div').scroll(function(){
-            var scrollValue = $('.device_wrap > div').scrollTop();
-            console.log(scrollValue) 
-            if(scrollValue > 250){
-                $('.header').addClass('active')
-            }else {
-                $('.header').removeClass('active')
-            }
-        });
     });
 </script>
 
 <style>
-    .header {transform:translateY(-500px); transition:all 0.5s;}
-    .header.active {transform:translateY(0px);}
+    .header {position: static !important;}
     .wrap_inner {align-items:center;}
     .badge {position:absolute; top:0; left:0;}
     .txt_wrap_s {opacity:0; transition:all 0.5s;}
@@ -58,15 +44,8 @@
 
     .device_wrap {margin-left:280px;}
     .device_wrap > div > ul {background-image: linear-gradient(#fff, #fdfdfd, #f4f4f4);}
+    .device_wrap > div > ul li {padding-top:16px !important;}
     ul li.show img {position:relative; z-index:1; transition:all 0.2s; opacity:0.5;}
     ul li.show img.on {opacity:1;}
-
-    .device_wrap.active ul li:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:0; transition:all 0.5s;}
-    .device_wrap.active ul.show li:after {opacity:1;}
-
     .device_wrap img {width:100%;}
-    .scroll {position:absolute; top:-100%; left:0; right:0; transition:0.3s;}
-    .scroll.show {top:0;}
-    .origin {opacity:0; transition:0.2s;}
-    .origin.show {opacity:1;}
 </style>

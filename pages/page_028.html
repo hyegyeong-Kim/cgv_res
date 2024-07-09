@@ -7,7 +7,7 @@
             <ul>
                 <li><img src="./images/D/03.png" alt=""></li>
                 <li>
-                    <ol class="on">
+                    <ol>
                         <li><img src="./images/D/04_title.png" alt=""></li>
                         <li><img src="./images/D/04_cont.png" alt=""></li>
                         <li>
@@ -131,10 +131,10 @@
     </div>
     <div class="txt_wrap_s">
         <p>
-            <strong>영화 피드는 사용자들의 생생한 후기를 전달합니다.</strong><br>
-            <strong>실관람객의 사용자 경험</strong>을 공유하고,<br>
-            <strong>영화정보를 살펴보고</strong> 예매할 수 있습니다.
-            
+            사용자들의 <strong>실관람 후기,</strong> <br>
+            <strong>오피셜 계정의 공식 정보,액티비티 등</strong><br>
+            <strong>CGV의 모든 활동</strong>에 대한 <br>
+            경험을 확인할 수 있습니다.
 
             
          </p>
@@ -147,16 +147,12 @@
             $('.txt_wrap_s, .device_wrap').addClass('active');
         },500);
 
-        setTimeout(()=>{
-            $('.device_wrap.active > div > ul').addClass('show');
-        },1000)
-
         var option_sec01 = {
                 slidesPerView: 1.1,
                 spaceBetween: 5,
                 loop: true,
                 autoplay: {
-                    delay: 3000,
+                    delay: 2000,
                 },
             };
 
@@ -165,7 +161,7 @@
                 spaceBetween: 5,
                 loop: true,
                 autoplay: {
-                    delay: 3000,
+                    delay: 2000,
                 },
                 pagination: {
                     el: ".swiper-pagination",
@@ -187,18 +183,11 @@
     .txt_wrap_s.active {opacity:1;}
     .txt_wrap_s p {opacity:0; transform:translateY(300px); transition:all 0.5s 0.25s;}
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
-    .device_wrap > div > ul {background: linear-gradient(rgba(255,255,255,1) 0%, rgba(243,243,243,1) 1%, rgba(244,244,244,1) 100%); overflow-x:hidden;}
-    .device_wrap > div > ul > li {padding-right:15px; padding-left:15px;}
+    .device_wrap > div > ul {padding:0 15px; background: linear-gradient(rgba(255,255,255,1) 0%, rgba(243,243,243,1) 1%, rgba(244,244,244,1) 100%); overflow-x:hidden;}
     .device_wrap > div > ul > * + * {padding:16px 0;}
     .device_wrap > div > ul > li > ol {padding:20px; background:#fff; border-radius:16px;}
     .device_wrap > div > ul > li > ol > * + * {margin-top:20px;}
     .device_wrap > div > ul > li > span {margin-bottom:12px; color:#121212; font-size:14px; font-weight:700; letter-spacing:-1.5%; display:block;}
-
-    .device_wrap.active > div > ul > li:after {background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; right:0; bottom:0; left:0; z-index:0; transition:1s ease-out;}
-    .device_wrap.active > div > ul.show > li:after {opacity:1;}
-    ol {position:relative; z-index:0; transition:all 0.4s 1s;}
-    ol.on {z-index:1;}
-
 
     .device_wrap {margin-left:280px;}
     /* .device_wrap > div {overflow:hidden;} */
@@ -208,7 +197,6 @@
     .main_visual {padding:0; transition:all 0.35s;}
     .main_visual .swiper-container {margin-right:-20px}
     .main_visual .visual .swiper-wrapper .swiper-slide {padding:0px 3px 0 !important;}
-    .fllow_visual .visual.swiper-container {z-index:0;}
 
     /* //swiper */
 

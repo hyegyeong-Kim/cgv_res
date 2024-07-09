@@ -1,44 +1,26 @@
-<div class="wrap_inner">
-    <strong class="badge">통합결제</strong>
-
-    <div class="device_wrap">
-        <div>
-            <p class="header"><img src="./images/C/header_01.png"/></p>
-            <ul>
-                <li><img src="./images/C/full_img.png" alt=""></li>
-            </ul>
-        </div>
-        <p class="bottom"><img src="./images/C/footer.png"/></p>
-    </div>
-    <div class="txt_wrap_s">
-        <p>
-            <strong>결제 완료까지</strong> 필요한 과정을<br>
-            <strong>사용자가 명확하게 구별하여 인지</strong>할 수 있도록<br>
-            <strong>카드형 UI로 섹션</strong>을 구성했습니다.
-        </p>
-    </div>
+<strong class="badge">통합결제</strong>
+<div class="txt_wrap_s ac">
+    <strong>많은 예매와 예약이 가능하도록<br>
+        자연스럽고 쉬운 플로우로 결제가 진행됩니다.</strong>
+    <p>서로 다른 항목을 한꺼번에 결제할때도<br>
+        사용자에게 혼란을 주지 않도록 심플하고 <br>
+        명확한 플로우의 UI/UX를 제공합니다.</p>
 </div>
 
 <script>
     $(function(){
         setTimeout(()=>{
-            $('.txt_wrap_s, .device_wrap').addClass('active');
+            $('.txt_wrap_s, .badge').addClass('active');
         },500);
     });
 </script>
 
 <style>
-    .wrap_inner {align-items:start;}
-    .badge {position:absolute; top:0; left:0;}
-    .txt_wrap_s {padding-top:120px; opacity:0; transition:all 0.5s;}
-    .txt_wrap_s.active {opacity:1;}
-    .txt_wrap_s p {padding-top:200px; opacity:0; transform:translateY(100px); transition: 1s 0.8s ease-out; }
+    .wrap {flex-direction:column; overflow:hidden;}
+    .badge {font-size:36px;; margin-bottom:40px; transform:translateY(100px); opacity:0; transition: 0.5s ease-out;}
+    .badge.active {opacity:1; transform:translateY(0);}
+    .txt_wrap_s strong {transform:translateY(200px); opacity:0; transition: 0.5s 0.7s ease-out; line-height:150%;}
+    .txt_wrap_s.active strong {opacity:1; transform:translateY(0);}
+    .txt_wrap_s p {color:#777; font-weight:300; transform:translateY(300px); opacity:0; transition:all 0.5s 1s;}
     .txt_wrap_s.active p {opacity:1; transform:translateY(0);}
-    /* .bottom::before {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:0; left:0; right:0; bottom:0; z-index:1; display:block; transition:all 0.5s 1.5s;}
-    .device_wrap.active > .bottom::before {opacity:1;} */
-
-    .device_wrap {margin-left:280px;}
-    /* .device_wrap > div {overflow:hidden;} */
-    /* .device_wrap > div:after {width:100%; background-color:rgba(0,0,0,0.7); opacity:0; content:''; position:absolute; top:155px; bottom:0; left:0; z-index:1; display:block; transition:all 0.5s 1.5s;}
-    .device_wrap.active > div:after {opacity:1;} */
-</style>
+</style> 
