@@ -23,7 +23,7 @@ em {font-style:normal;}
 
 /* edit 24.07.09 */
 /* .btnSection {position:fixed; right:240px; bottom:140px; display:flex; align-items:center; gap:7px;} */
-.btnSection {margin-right:170px; margin-bottom:140px; display:flex; align-items:center; gap:7px;}
+.btnSection {margin-right:50px; margin-bottom:140px; display:flex; align-items:center; gap:7px;}
 /* //edit 24.07.09 */
 .btnSection button {width:76px; height:76px; font-size:0; background:url('../images/prev.png') 0 0 no-repeat; background-size:cover; border-radius:50%;}
 .btnSection button + button {transform:rotate(180deg);}
@@ -49,10 +49,11 @@ em {font-style:normal;}
 .video > img {position:relative; z-index:2;}
 
 /* add 24.07.09 */
-.panel_menu {position:fixed; top:0; right:0; bottom:0; display:flex; align-items:end; flex-direction:row-reverse; transform:translateX(210px); transition:all 0.52s;}
+.panel_menu {position:fixed; top:0; right:0; bottom:0; display:none; align-items:end; flex-direction:row-reverse; transform:translateX(210px); transition:all 0.52s;}
+.panel_menu.active {display:flex;}
 .panel_menu.close {transform:translateX(0);}
-.panel_menu .panel_cont {width:37px; height:76px; border:1px solid #ccc; border-radius:10px 0 0 10px; background:#fff url('../images/Polygon7.png') no-repeat 50%; background-size:15px auto; position:absolute; top:50%; left:0; transform:translate(-100%, -50%);}
-.panel {width:210px; height:100%; background-color:#fcfcfc; border-left:1px solid #ccc; position:relative; visibility:hidden; display:flex; justify-content:center; flex-direction:column;}
+.panel_menu .panel_cont {width:42px; height:76px; border:1px solid #ccc; border-radius:10px 0 0 10px; background:#fff url('../images/Polygon7.png') no-repeat 50%; background-size:15px auto; position:absolute; top:50%; left:0; transform:translate(-100%, -50%);}
+.panel {width:210px; height:100%; background-color:#f6f6f6; border-left:1px solid #ccc; position:relative; visibility:hidden; display:flex; justify-content:center; flex-direction:column;}
 .panel.show {visibility:visible;}
 .panel dl {width:129px; margin:40px;}
 .panel > dl > dt {text-align:left;}
@@ -64,13 +65,15 @@ em {font-style:normal;}
 .panel dd ul li a {height:30px; color:#121212; background-color:#fff; border:1px solid #d9d9d9; border-radius:6px; text-decoration:none; flex:1; display:flex; align-items:center; justify-content:center;}
 /* //add 24.07.09 */
 
-button{background: inherit ; border:none; box-shadow:none; border-radius:0; padding:0; overflow:visible; cursor:pointer}
+/* login */
+.login_sec {position:fixed; top: 50%;left:50%; display:none; transform:translate(-50%, -50%); transition:opacity 0.35s;}
+.login_sec.show {display:block;}
 
-/*login*/
-.login_sec {position:fixed; top: 50%;left:50%; transform:translate(-50%, -50%);}
-.input_wrap {margin-top:-10px; display:flex; flex-direction:column;}
+.input_wrap {display:flex; flex-direction:column;}
 .input_wrap input {width:323px; height:56px; padding:15px 22px; box-sizing:border-box; font-weight:300; border:1px solid #d6d6d6; }
 .input_wrap input::placeholder {font-size:18px; color:#ccc;}
 .id{border-radius:10px 10px 0 0;}
 .pw{border-radius:0px 0px 10px 10px; border-top:none !important}
 .login_btn {width:323px; height:56px; margin-top:18px; color:#fff; font-size:18px; font-weight:700; background:#EE3224; border-radius:10px; border:1px solid #EE3224;}
+
+#loginCheck {position:fixed; top:-100px; left:-100px; visibility:hidden;}
