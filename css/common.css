@@ -23,7 +23,7 @@ em {font-style:normal;}
 
 /* edit 24.07.09 */
 /* .btnSection {position:fixed; right:240px; bottom:140px; display:flex; align-items:center; gap:7px;} */
-.btnSection {margin-right:50px; margin-bottom:140px; display:flex; align-items:center; gap:7px;}
+.btnSection {margin-right:170px; margin-bottom:140px; display:flex; align-items:center; gap:7px;}
 /* //edit 24.07.09 */
 .btnSection button {width:76px; height:76px; font-size:0; background:url('../images/prev.png') 0 0 no-repeat; background-size:cover; border-radius:50%;}
 .btnSection button + button {transform:rotate(180deg);}
