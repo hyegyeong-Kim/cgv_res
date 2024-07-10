@@ -49,7 +49,8 @@ em {font-style:normal;}
 .video > img {position:relative; z-index:2;}
 
 /* add 24.07.09 */
-.panel_menu {position:fixed; top:0; right:0; bottom:0; display:none; align-items:end; flex-direction:row-reverse; transform:translateX(210px); transition:all 0.52s;}
+/* 로그인 있을 때는 display:none; 로그인 없을때는 display:flex */
+.panel_menu {position:fixed; top:0; right:0; bottom:0; display:flex; align-items:end; flex-direction:row-reverse; transform:translateX(210px); transition:all 0.52s;}
 .panel_menu.active {display:flex;}
 .panel_menu.close {transform:translateX(0);}
 .panel_menu .panel_cont {width:42px; height:76px; border:1px solid #ccc; border-radius:10px 0 0 10px; background:#fff url('../images/Polygon7.png') no-repeat 50%; background-size:15px auto; position:absolute; top:50%; left:0; transform:translate(-100%, -50%);}

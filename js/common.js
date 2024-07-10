@@ -1,9 +1,10 @@
+/* 로그인 있을때 */
 // const urlParams = new URL(location.href).searchParams;
-//     let scene = urlParams.get('scene');
+// let scene = urlParams.get('scene');
 
-//     if(scene == null){
-//         scene = 1;
-//     }
+// if(scene == null){
+//     scene = 1;
+// }
 
 // $(document).ready(function(){
 
@@ -44,14 +45,12 @@
 //             $('.login_sec').removeClass('show');
 //         } else {
 //             scene = null;
-//             location.href = '/';
+//             location.href = './';
 //         }
 //     });
 
 //     /* cookie */
 //     var key = getCookie("key");
-
-//     console.log('k : '+key)
 
 //     if(key == 1){ // 그 전에 ID를 저장해서 처음 페이지 로딩 시, 입력 칸에 저장된 ID가 표시된 상태라면,
 //         $("#loginCheck").attr("checked", true); // ID 저장하기를 체크 상태로 두기.
@@ -77,7 +76,7 @@
 //         $('.login_sec').removeClass('show');
 //     } else {
 //         if(scene > 1){
-//             location.href = '/'
+//             location.href = './'
 //         }
 //         $('.login_sec').addClass('show');
 //     }
@@ -92,7 +91,7 @@
 
 //     for(i=0; i<link_arry.title.length; i++){
 //         $('.panel').append(`<dl>
-//             <dt><a href="/?scene=`+link_arry.start[i]+`">`+link_arry.title[i]+`</a></dt>
+//             <dt><a href="./?scene=`+link_arry.start[i]+`">`+link_arry.title[i]+`</a></dt>
 //             <dd>
 //                 <ul></ul>
 //             </dd>
@@ -102,7 +101,7 @@
 
 //             for(j=link_arry.start[i]; j < (link_arry.start[i+1] - 1); j++){
 //                 $('.panel dl').eq(i).find('ul').append(`<li>
-//                     <a href="/?scene=`+(j+1)+`">`+((j - link_arry.start[i]) + 1)+`</a>
+//                     <a href="./?scene=`+(j+1)+`">`+((j - link_arry.start[i]) + 1)+`</a>
 //                 </li>`);
 //             }
 
@@ -110,7 +109,7 @@
 
 //             for(j=link_arry.start[i]; j < link_arry.last[0]; j++){
 //                 $('.panel dl').eq(i).find('ul').append(`<li>
-//                     <a href="/?scene=`+(j+1)+`">`+((j - link_arry.start[i]) + 1)+`</a>
+//                     <a href="./?scene=`+(j+1)+`">`+((j - link_arry.start[i]) + 1)+`</a>
 //                 </li>`);
 //             }
 
@@ -204,11 +203,12 @@
 //     }
 //     return unescape(cookieValue);
 // }
-// /* //cookie */
+/* //cookie */
+/* //로그인 있을때 */
 
 
 
-
+/* 로그인 없을 때 */
 
 const urlParams = new URL(location.href).searchParams;
     let scene = urlParams.get('scene');
