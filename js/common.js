@@ -234,7 +234,7 @@ $(document).ready(function(){
 
     for(i=0; i<link_arry.title.length; i++){
         $('.panel').append(`<dl>
-            <dt><a href="/?scene=`+link_arry.start[i]+`">`+link_arry.title[i]+`</a></dt>
+            <dt><a href="./?scene=`+link_arry.start[i]+`">`+link_arry.title[i]+`</a></dt>
             <dd>
                 <ul></ul>
             </dd>
@@ -244,7 +244,7 @@ $(document).ready(function(){
 
             for(j=link_arry.start[i]; j < (link_arry.start[i+1] - 1); j++){
                 $('.panel dl').eq(i).find('ul').append(`<li>
-                    <a href="/?scene=`+(j+1)+`">`+((j - link_arry.start[i]) + 1)+`</a>
+                    <a href="./?scene=`+(j+1)+`">`+((j - link_arry.start[i]) + 1)+`</a>
                 </li>`);
             }
 
@@ -253,7 +253,7 @@ $(document).ready(function(){
             for(j=link_arry.start[i]; j < link_arry.last[0]; j++){
                 console.log('last j : '+j,' / ',i)
                 $('.panel dl').eq(i).find('ul').append(`<li>
-                    <a href="/?scene=`+(j+1)+`">`+((j - link_arry.start[i]) + 1)+`</a>
+                    <a href="./?scene=`+(j+1)+`">`+((j - link_arry.start[i]) + 1)+`</a>
                 </li>`);
             }
 
@@ -281,7 +281,7 @@ const link = {
             link.ajax(Number(scene)-1);
             $('.wrap').off('transitionend');
             $('.wrap').css('opacity',0).on('transitionend', function(){
-                location.href = '?scene='+(Number(scene)-1);
+                location.href = './?scene='+(Number(scene)-1);
             });
         }
     },
@@ -289,7 +289,7 @@ const link = {
         link.ajax(Number(scene)+1);
         $('.wrap').off('transitionend');
         $('.wrap').css('opacity',0).on('transitionend', function(){
-            location.href = '?scene='+(Number(scene)+1);
+            location.href = './?scene='+(Number(scene)+1);
         });
     },
     ajax:(scene)=>{
