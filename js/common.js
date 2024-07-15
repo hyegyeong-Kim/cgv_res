@@ -218,79 +218,99 @@ const urlParams = new URL(location.href).searchParams;
     }
 
 $(document).ready(function(){
-
-    // $('.wrap').css('opacity',1);
-    setTimeout(function(){
-        $('.wrap').css('opacity',1);
-    },350);
-    link.ajax(Number(scene));
-
-     /* add 24.07.09 panel */
-     var link_arry = {
-        title:['메인','예매','통합결제','피드'], //각 타이틀
-        start:[3, 12, 20, 27], //각첫번째 페이지
-        last:[33]
-    };
-
-    for(i=0; i<link_arry.title.length; i++){
-        $('.panel').append(`<dl>
-            <dt><a href="./?scene=`+link_arry.start[i]+`">`+link_arry.title[i]+`</a></dt>
-            <dd>
-                <ul></ul>
-            </dd>
-        </dl>`);
-
-        if(link_arry.start[i+1] != undefined){
-
-            for(j=link_arry.start[i]; j < (link_arry.start[i+1] - 1); j++){
-                $('.panel dl').eq(i).find('ul').append(`<li>
-                    <a href="./?scene=`+(j+1)+`">`+((j - link_arry.start[i]) + 1)+`</a>
-                </li>`);
-            }
-
-        } else {
-
-            for(j=link_arry.start[i]; j < link_arry.last[0]; j++){
-                console.log('last j : '+j,' / ',i)
-                $('.panel dl').eq(i).find('ul').append(`<li>
-                    <a href="./?scene=`+(j+1)+`">`+((j - link_arry.start[i]) + 1)+`</a>
-                </li>`);
-            }
-
-        }
-    }
-    
-    $('.panel_cont').click(function(){
-        if($('.panel_menu').hasClass('close')){
-            $('.panel_menu').removeClass('close');
-        } else {
-            $('.panel_menu').addClass('close');
-        }
-    });
-
-    if(scene != 1){
-        $('.panel').addClass('show');
-    }
-    /* //add 24.07.09 panel */
-
+    link.ajax(scene);
+    link.mk_panel();
 });
 
 const link = {
     prev:()=>{
+        const urlParams = new URL(location.href).searchParams;
+        let scene = urlParams.get('scene');
+
+        if(scene == null){
+            scene = 1;
+        }
         if(scene > 1){
-            link.ajax(Number(scene)-1);
             $('.wrap').off('transitionend');
             $('.wrap').css('opacity',0).on('transitionend', function(){
-                location.href = './?scene='+(Number(scene)-1);
+                // location.href = './?scene='+(Number(scene)-1);
+                $('.wrap').off('transitionend');
+                history.pushState(null, null, './?scene='+(Number(scene)-1));
+                link.ajax(Number(scene)-1);
             });
         }
     },
     next:()=>{
-        link.ajax(Number(scene)+1);
+        const urlParams = new URL(location.href).searchParams;
+        let scene = urlParams.get('scene');
+
+        if(scene == null){
+            scene = 1;
+        }
+        
         $('.wrap').off('transitionend');
         $('.wrap').css('opacity',0).on('transitionend', function(){
-            location.href = './?scene='+(Number(scene)+1);
+            // location.href = './?scene='+(Number(scene)+1);
+            $('.wrap').off('transitionend');
+            history.pushState(null, null, './?scene='+(Number(scene)+1));
+            link.ajax(Number(scene)+1);
         });
+    },
+    mk_panel:()=>{
+        const urlParams = new URL(location.href).searchParams;
+        let scene = urlParams.get('scene');
+
+        if(scene == null){
+            scene = 1;
+        }
+        
+        var link_arry = {
+            title:['메인','예매','통합결제','피드'], //각 타이틀
+            start:[3, 12, 20, 27], //각첫번째 페이지
+            last:[33]
+        };
+    
+        for(i=0; i<link_arry.title.length; i++){
+            $('.panel').append(`<dl>
+                <dt><a href="javascript:void(0);" onclick="link.ajax(`+link_arry.start[i]+`); link.param(`+link_arry.start[i]+`);">`+link_arry.title[i]+`</a></dt>
+                <dd>
+                    <ul></ul>
+                </dd>
+            </dl>`);
+    
+            if(link_arry.start[i+1] != undefined){
+    
+                for(j=link_arry.start[i]; j < (link_arry.start[i+1] - 1); j++){
+                    $('.panel dl').eq(i).find('ul').append(`<li>
+                        <a href="javascript:void(0);" onclick="link.ajax(`+(j+1)+`); link.param(`+(j+1)+`);">`+((j - link_arry.start[i]) + 1)+`</a>
+                    </li>`);
+                }
+    
+            } else {
+    
+                for(j=link_arry.start[i]; j < link_arry.last[0]; j++){
+                    console.log('last j : '+j,' / ',i)
+                    $('.panel dl').eq(i).find('ul').append(`<li>
+                        <a href="javascript:void(0);" onclick="link.ajax(`+(j+1)+`); link.param(`+(j+1)+`);">`+((j - link_arry.start[i]) + 1)+`</a>
+                    </li>`);
+                }
+    
+            }
+        }
+
+        /* panel open / close */
+        $('.panel').delegate('.panel_cont', 'click', function(){
+            if($('.panel_menu').hasClass('close')){
+                $('.panel_menu').removeClass('close');
+            } else {
+                $('.panel_menu').addClass('close');
+            }
+        });
+    
+        $('.panel').addClass('show');
+    },
+    param:(scene)=>{
+        history.pushState(null, null, './?scene='+(scene));
     },
     ajax:(scene)=>{
         $.ajax({
@@ -298,11 +318,14 @@ const link = {
             method:'get',
             success: function(html){
                 setTimeout(function(){
-                    $('.wrap').html(html); //호출한 파일을 대상 요소에 html로 담음
+                    $('.wrap').empty();
+                    setTimeout(function(){
+                        $('.wrap').html(html); //호출한 파일을 대상 요소에 html로 담음
+                        $('.wrap').css('opacity',1);
+                    },500)
                 },350);
             }, complete: function(){
             }, error: function(){
-                // $('.wrap').append('<strong>Error!!</strong>');
             }
         });
     }
