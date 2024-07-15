@@ -235,7 +235,7 @@ const link = {
             $('.wrap').css('opacity',0).on('transitionend', function(){
                 // location.href = './?scene='+(Number(scene)-1);
                 $('.wrap').off('transitionend');
-                history.pushState(null, null, './?scene='+(Number(scene)-1));
+                link.param(Number(scene)-1);
                 link.ajax(Number(scene)-1);
             });
         }
@@ -252,7 +252,7 @@ const link = {
         $('.wrap').css('opacity',0).on('transitionend', function(){
             // location.href = './?scene='+(Number(scene)+1);
             $('.wrap').off('transitionend');
-            history.pushState(null, null, './?scene='+(Number(scene)+1));
+            link.param(Number(scene)+1);
             link.ajax(Number(scene)+1);
         });
     },
@@ -317,13 +317,14 @@ const link = {
             url:'./pages/page_0'+scene+'.html', //호출할 파일 경로
             method:'get',
             success: function(html){
-                setTimeout(function(){
+                $('.wrap').css('opacity',0).on('transitionend',function(){
                     $('.wrap').empty();
-                    setTimeout(function(){
-                        $('.wrap').html(html); //호출한 파일을 대상 요소에 html로 담음
-                        $('.wrap').css('opacity',1);
-                    },500)
-                },350);
+                });
+                setTimeout(function(){
+                    $('.wrap').off('transitionend');
+                    $('.wrap').html(html); //호출한 파일을 대상 요소에 html로 담음
+                    $('.wrap').css('opacity',1);
+                },500);
             }, complete: function(){
             }, error: function(){
             }
